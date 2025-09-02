@@ -1,376 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastelería 1000 Sabores - 50 Años Endulzando Chile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
-    <link href="styles-bootstrap-optimized.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online</title>
 </head>
-<body class="bg-light">
-    <!-- Navbar usando Bootstrap components -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand fs-3 fw-bold text-primary" href="#home">
-                <i class="fas fa-birthday-cake text-warning me-2"></i>
-                Pastelería 1000 Sabores
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fw-semibold px-3" href="#productos">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-semibold px-3" href="#registro">Registro</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-semibold px-3" href="#contacto">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative px-3" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
-                            <i class="fas fa-shopping-cart fs-5"></i>
-                            <span id="cartCounter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<body>
+
+  <!-- Barra superior -->
+  <header>
+    <div class="logo">
+      <p>Site Name</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
 
-    <!-- Hero Section usando Bootstrap utilities -->
-    <section id="home" class="hero-gradient text-white text-center py-5" style="margin-top: 76px; min-height: 60vh;">
-        <div class="container d-flex flex-column justify-content-center h-100 py-5">
-            <h1 class="display-3 fw-bold mb-4 font-pacifico">50 Años Endulzando Chile</h1>
-            <p class="lead fs-4 mb-4">Desde 1975, creando momentos dulces e inolvidables. Famosos por nuestro récord Guinness en 1995.</p>
-            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                <button class="btn btn-light btn-lg px-4 py-2 fw-semibold" onclick="scrollToSection('productos')">
-                    <i class="fas fa-cake me-2"></i>Ver Productos
-                </button>
-                <button class="btn btn-outline-light btn-lg px-4 py-2 fw-semibold" onclick="scrollToSection('registro')">
-                    <i class="fas fa-user-plus me-2"></i>Registrarse
-                </button>
-            </div>
-        </div>
-    </section>
+    <div class="cart">
+      <p>Cart (0)</p>
+    </div>
+  </header>
 
-    <!-- Alert de Promociones usando Bootstrap Alert -->
-    <div class="container my-4">
-        <div class="alert alert-info alert-dismissible fade show shadow-sm" role="alert">
-            <i class="fas fa-gift me-2"></i>
-            <strong>¡Promociones especiales!</strong> 
-            <span class="d-inline-flex flex-wrap gap-2 mt-2 mt-md-0">
-                <span class="badge bg-success">50% descuento +50 años</span>
-                <span class="badge bg-primary">10% código "FELICES50"</span>
-                <span class="badge bg-warning text-dark">Torta gratis estudiantes Duoc</span>
-            </span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
+  <!-- Enlaces de login -->
+  <div class="user-links">
+    <a href="login.html">Iniciar sesión</a> |
+    <a href="registro.html">Registrar usuario</a>
+  </div>
+
+  <!-- Hero / Banner principal -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>TIENDA ONLINE</h1>
+      <p>
+        Aquí va una breve descripción de la tienda, promociones o mensaje principal.
+      </p>
+      <button>Ver productos</button>
+    </div>
+    <div class="hero-image">
+      <!-- Aquí va una imagen destacada -->
+      <img src="placeholder.jpg" alt="Imagen destacada">
+    </div>
+  </section>
+
+  <!-- Listado de productos -->
+  <section class="productos">
+    <article>
+      <img src="producto1.jpg" alt="Producto 1">
+      <h3>Product Title</h3>
+      <p>Atributos</p>
+      <p>$00.00</p>
+    </article>
+    <article>
+      <img src="producto2.jpg" alt="Producto 2">
+      <h3>Product Title</h3>
+      <p>Atributos</p>
+      <p>$00.00</p>
+    </article>
+    <article>
+      <img src="producto3.jpg" alt="Producto 3">
+      <h3>Product Title</h3>
+      <p>Atributos</p>
+      <p>$00.00</p>
+    </article>
+    <article>
+      <img src="producto4.jpg" alt="Producto 4">
+      <h3>Product Title</h3>
+      <p>Atributos</p>
+      <p>$00.00</p>
+    </article>
+    <!-- Se pueden agregar más productos -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <p>Site Name</p>
+      <p>Categoría X | Categoría Y | Categoría Z</p>
+      <p>[Iconos de pago]</p>
     </div>
 
-    <!-- Registro Section usando Bootstrap Grid y Form -->
-    <section id="registro" class="py-5 bg-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card shadow border-0 rounded-4">
-                        <div class="card-header bg-primary text-white text-center py-4 rounded-top-4">
-                            <h2 class="font-pacifico mb-0">Registro de Usuario</h2>
-                        </div>
-                        <div class="card-body p-4">
-                            <form id="registroForm" class="needs-validation" novalidate>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="nombre" class="form-label fw-semibold">Nombre *</label>
-                                        <input type="text" class="form-control form-control-lg" id="nombre" required>
-                                        <div class="invalid-feedback">
-                                            <i class="fas fa-exclamation-circle me-1"></i>Por favor ingrese su nombre
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="apellido" class="form-label fw-semibold">Apellido *</label>
-                                        <input type="text" class="form-control form-control-lg" id="apellido" required>
-                                        <div class="invalid-feedback">
-                                            <i class="fas fa-exclamation-circle me-1"></i>Por favor ingrese su apellido
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="email" class="form-label fw-semibold">Email *</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                            <input type="email" class="form-control form-control-lg" id="email" required>
-                                            <div class="invalid-feedback">Por favor ingrese un email válido</div>
-                                        </div>
-                                        <div class="form-text">
-                                            <i class="fas fa-graduation-cap text-primary"></i>
-                                            Estudiantes Duoc: usar correo institucional (@duocuc.cl)
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="fechaNacimiento" class="form-label fw-semibold">Fecha de Nacimiento *</label>
-                                        <input type="date" class="form-control form-control-lg" id="fechaNacimiento" required>
-                                        <div class="invalid-feedback">Por favor ingrese su fecha de nacimiento</div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="telefono" class="form-label fw-semibold">Teléfono</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                            <input type="tel" class="form-control form-control-lg" id="telefono">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="codigoDescuento" class="form-label fw-semibold">Código de Descuento</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="fas fa-tag"></i></span>
-                                            <input type="text" class="form-control form-control-lg" id="codigoDescuento" placeholder="FELICES50">
-                                        </div>
-                                        <div class="form-text">
-                                            <i class="fas fa-gift text-warning"></i>
-                                            Ingrese "FELICES50" para 10% de descuento de por vida
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-check form-check-lg">
-                                            <input class="form-check-input" type="checkbox" id="terminos" required>
-                                            <label class="form-check-label fw-semibold" for="terminos">
-                                                Acepto los términos y condiciones *
-                                            </label>
-                                            <div class="invalid-feedback">Debe aceptar los términos</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 d-grid">
-                                        <button type="submit" class="btn btn-primary btn-lg py-3 fw-semibold">
-                                            <i class="fas fa-user-plus me-2"></i>Registrarse Ahora
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                            
-                            <!-- Alert de éxito usando Bootstrap -->
-                            <div id="registroExito" class="alert alert-success mt-4 d-none shadow-sm">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-check-circle fs-3 me-3 text-success"></i>
-                                    <div>
-                                        <h5 class="alert-heading mb-1">¡Registro Exitoso!</h5>
-                                        <div id="mensajeExito"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Divisor usando Bootstrap utilities -->
-    <div class="container my-5">
-        <hr class="border-primary border-3 opacity-25">
-        <div class="text-center position-relative">
-            <span class="bg-light px-3 fs-2 position-absolute top-50 start-50 translate-middle">🍰</span>
-        </div>
+    <div class="footer-right">
+      <p>Stay in Touch Join our Newsletter</p>
+      <form>
+        <input type="email" placeholder="Enter Email">
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
+  </footer>
 
-    <!-- Productos Section -->
-    <section id="productos" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 font-pacifico text-primary mb-3">Nuestros Deliciosos Productos</h2>
-                <p class="lead text-muted">Descubre nuestra amplia selección de productos artesanales</p>
-            </div>
-            
-            <!-- Filtros usando Bootstrap Button Group -->
-            <div class="row mb-4">
-                <div class="col-lg-8 mb-3 mb-lg-0">
-                    <div class="btn-group flex-wrap" role="group">
-                        <input type="radio" class="btn-check" name="category" id="cat-all" data-category="all" checked>
-                        <label class="btn btn-outline-primary" for="cat-all">Todos</label>
-                        
-                        <input type="radio" class="btn-check" name="category" id="cat-cuadradas" data-category="Tortas Cuadradas">
-                        <label class="btn btn-outline-primary" for="cat-cuadradas">Cuadradas</label>
-                        
-                        <input type="radio" class="btn-check" name="category" id="cat-circulares" data-category="Tortas Circulares">
-                        <label class="btn btn-outline-primary" for="cat-circulares">Circulares</label>
-                        
-                        <input type="radio" class="btn-check" name="category" id="cat-postres" data-category="Postres Individuales">
-                        <label class="btn btn-outline-primary" for="cat-postres">Postres</label>
-                        
-                        <input type="radio" class="btn-check" name="category" id="cat-sinazucar" data-category="Productos Sin Azúcar">
-                        <label class="btn btn-outline-primary" for="cat-sinazucar">Sin Azúcar</label>
-                        
-                        <input type="radio" class="btn-check" name="category" id="cat-tradicional" data-category="Pastelería Tradicional">
-                        <label class="btn btn-outline-primary" for="cat-tradicional">Tradicional</label>
-                        
-                        <input type="radio" class="btn-check" name="category" id="cat-singluten" data-category="Productos Sin Gluten">
-                        <label class="btn btn-outline-primary" for="cat-singluten">Sin Gluten</label>
-                        
-                        <input type="radio" class="btn-check" name="category" id="cat-vegana" data-category="Productos Vegana">
-                        <label class="btn btn-outline-primary" for="cat-vegana">Vegana</label>
-                        
-                        <input type="radio" class="btn-check" name="category" id="cat-especiales" data-category="Tortas Especiales">
-                        <label class="btn btn-outline-primary" for="cat-especiales">Especiales</label>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-search"></i></span>
-                        <input type="text" class="form-control form-control-lg" id="searchProduct" placeholder="Buscar productos...">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Grid de Productos -->
-            <div class="row g-4" id="productosContainer">
-                <!-- Los productos se cargarán dinámicamente -->
-            </div>
-        </div>
-    </section>
-
-    <div class="container my-5">
-        <hr class="border-primary border-3 opacity-25">
-    </div>
-
-    <!-- Contacto Section -->
-    <section id="contacto" class="py-5 bg-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card shadow border-0 rounded-4">
-                        <div class="card-header bg-success text-white text-center py-4 rounded-top-4">
-                            <h2 class="font-pacifico mb-0">Contáctanos</h2>
-                        </div>
-                        <div class="card-body p-4">
-                            <form id="contactoForm" class="needs-validation" novalidate>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="nombreContacto" class="form-label fw-semibold">Nombre</label>
-                                        <input type="text" class="form-control form-control-lg" id="nombreContacto" required>
-                                        <div class="invalid-feedback">Por favor ingrese su nombre</div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="emailContacto" class="form-label fw-semibold">Email</label>
-                                        <input type="email" class="form-control form-control-lg" id="emailContacto" required>
-                                        <div class="invalid-feedback">Por favor ingrese un email válido</div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="asunto" class="form-label fw-semibold">Asunto</label>
-                                        <select class="form-select form-select-lg" id="asunto" required>
-                                            <option value="">Seleccione un asunto</option>
-                                            <option value="pedido">🛒 Consulta sobre pedido</option>
-                                            <option value="personalizada">🎨 Torta personalizada</option>
-                                            <option value="evento">🎉 Evento especial</option>
-                                            <option value="delivery">🚚 Consulta sobre delivery</option>
-                                            <option value="otro">💬 Otro</option>
-                                        </select>
-                                        <div class="invalid-feedback">Por favor seleccione un asunto</div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
-                                        <textarea class="form-control" id="mensaje" rows="5" required placeholder="Escriba su mensaje aquí..."></textarea>
-                                        <div class="invalid-feedback">Por favor ingrese su mensaje</div>
-                                    </div>
-                                    <div class="col-12 d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg py-3 fw-semibold">
-                                            <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal Carrito usando Bootstrap Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title font-pacifico">
-                        <i class="fas fa-shopping-cart me-2"></i>Mi Carrito de Compras
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="cartItems">
-                        <div class="text-center text-muted py-5">
-                            <i class="fas fa-shopping-cart display-1 mb-3 text-muted"></i>
-                            <h5>Tu carrito está vacío</h5>
-                            <p>¡Agrega algunos de nuestros deliciosos productos!</p>
-                        </div>
-                    </div>
-                    <div id="cartTotal" class="d-none bg-light p-3 rounded">
-                        <div id="totalAmount"></div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <i class="fas fa-times me-2"></i>Cerrar
-                    </button>
-                    <button type="button" class="btn btn-success" id="checkoutBtn" disabled>
-                        <i class="fas fa-credit-card me-2"></i>Proceder al Pago
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer usando Bootstrap -->
-    <footer class="bg-dark text-light py-5 mt-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h5 class="font-pacifico text-warning mb-3">Pastelería 1000 Sabores</h5>
-                    <p class="mb-3">50 años endulzando Chile con amor y tradición desde 1975.</p>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-trophy text-warning me-2 fs-4"></i>
-                        <small>Récord Guinness 1995 - Torta más grande del mundo</small>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <h5 class="mb-3">Contacto</h5>
-                    <div class="d-flex align-items-center mb-2">
-                        <i class="fas fa-phone text-warning me-3"></i>
-                        <span>+56 2 1234 5678</span>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <i class="fas fa-envelope text-warning me-3"></i>
-                        <span>info@pasteleriamilesabores.cl</span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-map-marker-alt text-warning me-3"></i>
-                        <span>Santiago, Chile</span>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <h5 class="mb-3">Síguenos</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-light fs-3 hover-effect">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="text-light fs-3 hover-effect">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-light fs-3 hover-effect">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <hr class="border-warning my-4">
-            <div class="text-center">
-                <p class="mb-0">&copy; 2025 Pastelería 1000 Sabores. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script-simplified.js"></script>
 </body>
 </html>
