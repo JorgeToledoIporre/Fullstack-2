@@ -12,6 +12,16 @@ body {
   color: #3a2d1f; 
   line-height: 1.6;
 }
+/* arreglar los colores de nav sobreescribiendo boostrap */
+nav .nav-link {
+  color: #fff !important;       /* el important es para que tenga más prioridad que boostrap */
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav .nav-link:hover {
+  color: #3a2d1f !important;    /* el hover al pasar el mouse */
+}
 
 /*el header en la cual todos están igual así que deberia estar bien con los colores y el padding (el espacio en contra el borde) */
 header {
