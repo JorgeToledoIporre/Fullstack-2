@@ -1,15 +1,173 @@
-/*header */
 
-header{
-    background-color: burlywood;
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Eliminar margenes y padding para espacio entre medio*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*aqui se pone el eslito general con la fuente (elegi una mega default) y colores de fondo */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fffaf3;  /*no sabia si poner gris o algo más blanco así que se quedó como crema*/ 
+  color: #3a2d1f; 
+  line-height: 1.6;
 }
 
-.header-actions{
-    display: flex;
-    gap: 1rem;
+/*el header en la cual todos están igual así que deberia estar bien con los colores y el padding (el espacio en contra el borde) */
+header {
+  background-color: #c69c6d; /* según yo es como un color de pan siono */
+  color: #fff;
+  padding: 10px 0;
+}
+
+header .logo img {
+  border-radius: 4px;
+}
+/*todo lo que tiene que ver con nav ul es el estilo de navegacion, o sea el menú de enlace en realidad solo lo centré y lo hice responsivo (además de darle color aunque es blanco lo pueden cambiar) */
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #3a2d1f; 
+}
+
+header .cart {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* aquí para abajo son todos los links de inicio de sesión y registro */
+.user-links {
+  text-align: right;
+  margin: 10px 20px;
+  font-size: 0.9rem;
+}
+
+.user-links a {
+  color: #c69c6d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.user-links a:hover {
+  color: #3a2d1f;
+}
+
+/* de aquí para abajo es todo lo de hero, o sea la sección principal*/
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7e7d3;
+  padding: 40px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #3a2d1f;
+}
+
+.hero-text p {
+  margin: 15px 0;
+}
+
+.hero-text button {
+  background-color: #c69c6d;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-text button:hover {
+  background-color: #a67843; 
+}
+
+.hero-image img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* el estilo de index para los productos */
+.productos {
+  display: grid; /*el grid para dejar los arituclos como cuadrados, con las columnas de abajo*/
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.productos article { /*el estilo o color para cada cuadrado con bordes más suaves  */
+  background-color: #fff;
+  border: 1px solid #e0c9a6;
+  border-radius: 8px; 
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s; /*un poco de suavizado para resaltar con el mouse*/
+}
+
+.productos article:hover { /*con esto se hace la animación o estilo cuando se pasa el mouse(hover)*/
+  transform: translateY(-5px);/*con el transform se mueve un poco hacia arriba (5 pixeles)*/
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.productos img {/*para que las imagenes sean responsivas y no se pasen del cuadrado*/
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+/* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
+
+
+
+
+/* aquí el pie de pagina con botones aunque probablmente haya que quitarlo si es que usamos boostrap(lo cual de hecho estamos usando) */
+footer {
+  background-color: #3a2d1f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer form {
+  display: flex;
+  gap: 10px;
+}
+
+footer input[type="email"] {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+footer button {
+  background-color: #c69c6d;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+footer button:hover {
+  background-color: #a67843;
 }
