@@ -113,14 +113,14 @@ header .cart {
 }
 
 /* el estilo de index para los productos */
-.productos {
+.productos-home {
   display: grid; /*el grid para dejar los arituclos como cuadrados, con las columnas de abajo*/
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 40px;
 }
 
-.productos article { /*el estilo o color para cada cuadrado con bordes más suaves  */
+.productos-home article { /*el estilo o color para cada cuadrado con bordes más suaves  */
   background-color: #fff;
   border: 1px solid #e0c9a6;
   border-radius: 8px; 
@@ -129,12 +129,12 @@ header .cart {
   transition: transform 0.3s, box-shadow 0.3s; /*un poco de suavizado para resaltar con el mouse*/
 }
 
-.productos article:hover { /*con esto se hace la animación o estilo cuando se pasa el mouse(hover)*/
+.productos-home article:hover { /*con esto se hace la animación o estilo cuando se pasa el mouse(hover)*/
   transform: translateY(-5px);/*con el transform se mueve un poco hacia arriba (5 pixeles)*/
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.productos img {/*para que las imagenes sean responsivas y no se pasen del cuadrado*/
+.productos-home img {/*para que las imagenes sean responsivas y no se pasen del cuadrado*/
   max-width: 100%;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -184,7 +184,8 @@ footer button:hover {
 
 
 /* Titulo de Home para la lista de productos más vendidos*/
-.productos-title h3 {
+.productos-home-title h3 {
+  text-align: center;
   display: inline-block;
   border-bottom: 2px solid #000; /* línea de subrayado */
   padding-bottom: 5px;
@@ -192,4 +193,43 @@ footer button:hover {
   margin-top: 15px;
 }
 
+.productos-home-title {
+  text-align: center;    /*centrar el titulo (No funciona si se junta con el de arriba)*/
+}
 
+.productos-home {
+  display: block; /* Asegura que los productos aparezcan debajo */
+  text-align: center; /* opcional: centra los productos */
+}
+
+
+
+
+/* el estilo para los productos en PRODUCTOS*/
+.productos {
+  display: grid; /*el grid para dejar los arituclos como cuadrados, con las columnas de abajo*/
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.productos article { /*el estilo o color para cada cuadrado con bordes más suaves  */
+  background-color: #fff;
+  border: 1px solid #e0c9a6;
+  border-radius: 8px; 
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s; /*un poco de suavizado para resaltar con el mouse*/
+}
+
+.productos article:hover { /*con esto se hace la animación o estilo cuando se pasa el mouse(hover)*/
+  transform: translateY(-5px);/*con el transform se mueve un poco hacia arriba (5 pixeles)*/
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.productos img {/*para que las imagenes sean responsivas y no se pasen del cuadrado*/
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+/* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
