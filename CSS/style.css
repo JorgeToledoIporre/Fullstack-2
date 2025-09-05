@@ -182,9 +182,6 @@ footer button:hover {
   background-color: #a67843;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
 /* Titulo de Home para la lista de productos más vendidos*/
 .productos-home-title h3 {
   text-align: center;
@@ -203,9 +200,6 @@ footer button:hover {
   display: block; /* Asegura que los productos aparezcan debajo */
   text-align: center; /* opcional: centra los productos */
 }
-
-
-
 
 /* el estilo para los productos en PRODUCTOS*/
 .productos {
