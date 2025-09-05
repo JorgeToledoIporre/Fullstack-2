@@ -181,3 +181,15 @@ footer button {
 footer button:hover {
   background-color: #a67843;
 }
+
+
+/* Titulo de Home para la lista de productos más vendidos*/
+.productos-title h3 {
+  display: inline-block;
+  border-bottom: 2px solid #000; /* línea de subrayado */
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+
+
