@@ -182,7 +182,6 @@ footer button:hover {
   background-color: #a67843;
 }
 
-
 /* Titulo de Home para la lista de productos más vendidos*/
 .productos-home-title h3 {
   text-align: center;
@@ -201,9 +200,6 @@ footer button:hover {
   display: block; /* Asegura que los productos aparezcan debajo */
   text-align: center; /* opcional: centra los productos */
 }
-
-
-
 
 /* el estilo para los productos en PRODUCTOS*/
 .productos {
@@ -233,3 +229,14 @@ footer button:hover {
   margin-bottom: 10px;
 }
 /* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
+
+.mi-button{
+  background-color: #c69c6d;
+  color: white;
+}
+
+.mi-button:hover {
+    background-color: #a67843;
+    cursor: pointer;
+    color: white;
+}
