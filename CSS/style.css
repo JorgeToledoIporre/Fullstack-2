@@ -183,6 +183,7 @@ footer button:hover {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 /* Titulo de Home para la lista de productos más vendidos*/
 .productos-home-title h3 {
@@ -235,6 +236,8 @@ footer button:hover {
 }
 /* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
 =======
+=======
+>>>>>>> Stashed changes
 .mi-button{
   background-color: #c69c6d;
   color: white;
@@ -245,4 +248,7 @@ footer button:hover {
     cursor: pointer;
     color: white;
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
