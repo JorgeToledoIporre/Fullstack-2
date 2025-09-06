@@ -165,12 +165,9 @@ header .cart {
 
 /* aquí el pie de pagina con botones aunque probablmente haya que quitarlo si es que usamos boostrap(lo cual de hecho estamos usando) */
 footer {
-  display: flex;
   background-color: #3a2d1f;
   color: #fff;
-  justify-content: space-between;
   padding: 20px 40px;
-  flex-wrap: wrap;
 }
 
 
@@ -178,14 +175,29 @@ footer {
   font-size: smaller;
 }
 
-.footer-categories{
-  display: flex;
-  flex-direction: column;
+.footer-categories span {
+  
+  margin-bottom: 20px;
+  display: inline-block;  
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;   
+}
+.footer-categories span:hover {
+  color: #a0a0a0;
+}
+
+.payment-icons img {
+  width: 50px;      
+  margin-right: 10px;
+  margin-bottom: 20px;
+  
 }
 
 .footer-right{
   display: flex;
   flex-direction: column;
+  align-items: end;
 }
 
 
