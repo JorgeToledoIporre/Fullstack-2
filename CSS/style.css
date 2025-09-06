@@ -184,7 +184,6 @@ footer button:hover {
 
 /* Titulo de Home para la lista de productos más vendidos*/
 .productos-home-title h3 {
-  text-align: center;
   display: inline-block;
   border-bottom: 2px solid #000; /* línea de subrayado */
   padding-bottom: 5px;
@@ -201,9 +200,14 @@ footer button:hover {
   text-align: center; /* opcional: centra los productos */
 }
 
+.productos-title h3 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
 /* el estilo para los productos en PRODUCTOS*/
 .productos {
-  display: grid; /*el grid para dejar los arituclos como cuadrados, con las columnas de abajo*/
+  display: grid; /*el grid para dejar los articulos como cuadrados, con las columnas de abajo*/
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 40px;
