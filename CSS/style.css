@@ -112,6 +112,25 @@ header .cart {
   border-radius: 10px;
 }
 
+.btn-productos-home {
+  display: inline-block;  
+  background-color: #c69c6d;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s; 
+  text-decoration: none;   
+   
+}
+
+.btn-productos-home:hover {
+  background-color: #a67843;
+}
+
+
 /* el estilo de index para los productos */
 .productos-home {
   display: grid; /*el grid para dejar los arituclos como cuadrados, con las columnas de abajo*/
@@ -146,22 +165,31 @@ header .cart {
 
 /* aquí el pie de pagina con botones aunque probablmente haya que quitarlo si es que usamos boostrap(lo cual de hecho estamos usando) */
 footer {
+  display: flex;
   background-color: #3a2d1f;
   color: #fff;
-  display: flex;
   justify-content: space-between;
   padding: 20px 40px;
   flex-wrap: wrap;
 }
 
-footer p {
-  margin: 5px 0;
+
+.footer-info {
+  font-size: smaller;
 }
 
-footer form {
+.footer-categories{
   display: flex;
-  gap: 10px;
+  flex-direction: column;
 }
+
+.footer-right{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
 
 footer input[type="email"] {
   padding: 8px;
