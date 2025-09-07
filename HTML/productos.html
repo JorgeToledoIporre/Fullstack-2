@@ -39,7 +39,7 @@
       
       <!--y el carrito igual que con pantalla grande-->
       <span class="navbar-text text-white fw-bold"> <!--text white para dejarlo blanco porque creo que hay problemas con el css-->
-          Cart (0)
+          Cart (<span id="cart-count">0</span>)
         </span>
       </div>
     </div>
@@ -53,103 +53,185 @@
   <!-- Listado de productos -->
   <section class="productos">
     <article>
-      <img src="producto1.jpg" alt="Producto 1">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/pastel1.jpg" alt="Torta de Chocolate" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Torta de Chocolate</h3>
+      <p>Deliciosa torta de chocolate con ganache y decoración artesanal</p>
+      <p class="fw-bold">$15.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(1, 'Torta de Chocolate', 15000, 'Deliciosa torta de chocolate con ganache y decoración artesanal')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto2.jpg" alt="Producto 2">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/pastel2.jpg" alt="Cheesecake de Fresa" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Cheesecake de Fresa</h3>
+      <p>Suave cheesecake con base de galletas y cobertura de fresas frescas</p>
+      <p class="fw-bold">$12.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(2, 'Cheesecake de Fresa', 12000, 'Suave cheesecake con base de galletas y cobertura de fresas frescas')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto3.jpg" alt="Producto 3">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/pastel3.jpg" alt="Torta Red Velvet" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Torta Red Velvet</h3>
+      <p>Clásica torta red velvet con cream cheese frosting</p>
+      <p class="fw-bold">$18.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(3, 'Torta Red Velvet', 18000, 'Clásica torta red velvet con cream cheese frosting')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto4.jpg" alt="Producto 4">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/cupcake1.jpg" alt="Cupcakes Vainilla" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Cupcakes de Vainilla</h3>
+      <p>Set de 6 cupcakes de vainilla con buttercream de colores</p>
+      <p class="fw-bold">$8.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(4, 'Cupcakes de Vainilla', 8000, 'Set de 6 cupcakes de vainilla con buttercream de colores')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto5.jpg" alt="Producto 5">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/tarta1.jpg" alt="Tarta de Limón" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Tarta de Limón</h3>
+      <p>Refrescante tarta de limón con merengue italiano</p>
+      <p class="fw-bold">$14.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(5, 'Tarta de Limón', 14000, 'Refrescante tarta de limón con merengue italiano')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto6.jpg" alt="Producto 6">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/brownie1.jpg" alt="Brownies Premium" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Brownies Premium</h3>
+      <p>Brownies extra chocolatosos con nueces y chips de chocolate</p>
+      <p class="fw-bold">$6.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(6, 'Brownies Premium', 6000, 'Brownies extra chocolatosos con nueces y chips de chocolate')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto7.jpg" alt="Producto 7">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/muffin1.jpg" alt="Muffins de Arándanos" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Muffins de Arándanos</h3>
+      <p>Pack de 4 muffins esponjosos con arándanos naturales</p>
+      <p class="fw-bold">$7.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(7, 'Muffins de Arándanos', 7000, 'Pack de 4 muffins esponjosos con arándanos naturales')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto8.jpg" alt="Producto 8">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/tiramisu1.jpg" alt="Tiramisú Clásico" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Tiramisú Clásico</h3>
+      <p>Auténtico tiramisú italiano con café expreso y mascarpone</p>
+      <p class="fw-bold">$16.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(8, 'Tiramisú Clásico', 16000, 'Auténtico tiramisú italiano con café expreso y mascarpone')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto9.jpg" alt="Producto 9">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/macaron1.jpg" alt="Macarons Franceses" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Macarons Franceses</h3>
+      <p>Caja de 12 macarons de sabores variados</p>
+      <p class="fw-bold">$20.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(9, 'Macarons Franceses', 20000, 'Caja de 12 macarons de sabores variados')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto10.jpg" alt="Producto 10">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/pie1.jpg" alt="Pie de Manzana" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Pie de Manzana</h3>
+      <p>Tradicional pie de manzana con canela y masa crocante</p>
+      <p class="fw-bold">$13.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(10, 'Pie de Manzana', 13000, 'Tradicional pie de manzana con canela y masa crocante')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto11.jpg" alt="Producto 11">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/eclair1.jpg" alt="Éclairs de Vainilla" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Éclairs de Vainilla</h3>
+      <p>Set de 6 éclairs rellenos de crema pastelera de vainilla</p>
+      <p class="fw-bold">$9.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(11, 'Éclairs de Vainilla', 9000, 'Set de 6 éclairs rellenos de crema pastelera de vainilla')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto12.jpg" alt="Producto 12">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/flan1.jpg" alt="Flan Casero" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Flan Casero</h3>
+      <p>Cremoso flan casero con caramelo líquido</p>
+      <p class="fw-bold">$5.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(12, 'Flan Casero', 5000, 'Cremoso flan casero con caramelo líquido')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto13.jpg" alt="Producto 13">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/profiterol1.jpg" alt="Profiteroles" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Profiteroles</h3>
+      <p>Deliciosos profiteroles rellenos de crema y bañados en chocolate</p>
+      <p class="fw-bold">$11.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(13, 'Profiteroles', 11000, 'Deliciosos profiteroles rellenos de crema y bañados en chocolate')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto14.jpg" alt="Producto 14">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/donut1.jpg" alt="Donuts Glaseadas" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Donuts Glaseadas</h3>
+      <p>Pack de 6 donuts con diferentes sabores de glaseado</p>
+      <p class="fw-bold">$8.500</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(14, 'Donuts Glaseadas', 8500, 'Pack de 6 donuts con diferentes sabores de glaseado')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto15.jpg" alt="Producto 15">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/croissant1.jpg" alt="Croissants de Almendra" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Croissants de Almendra</h3>
+      <p>Croissants hojaldrados rellenos de crema de almendra</p>
+      <p class="fw-bold">$4.500</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(15, 'Croissants de Almendra', 4500, 'Croissants hojaldrados rellenos de crema de almendra')">
+        Agregar al Carrito
+      </button>
     </article>
+
     <article>
-      <img src="producto16.jpg" alt="Producto 16">
-      <h3>Product Title</h3>
-      <p>Atributos</p>
-      <p>$00.00</p>
+      <img src="images/milhojas1.jpg" alt="Milhojas de Manjar" style="width: 100%; height: 200px; object-fit: cover;">
+      <h3>Milhojas de Manjar</h3>
+      <p>Exquisita milhojas con capas de hojaldre y manjar</p>
+      <p class="fw-bold">$10.000</p>
+      <button class="btn mi-button" onclick="agregarAlCarrito(16, 'Milhojas de Manjar', 10000, 'Exquisita milhojas con capas de hojaldre y manjar')">
+        Agregar al Carrito
+      </button>
     </article>
+  </section>
     <!-- Se pueden agregar más productos -->
   </section>
+  <!-- Modal de confirmación -->
+  <div class="modal fade" id="modalConfirmacion" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">¡Producto agregado!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p id="mensaje-confirmacion"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+          <a href="carrito.html" class="btn mi-button">Ir al carrito</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -181,6 +263,115 @@
       </form>
     </div>
   </footer>
+   <!-- JavaScript para el carrito -->
+  <script>
+    // Función para obtener el carrito actual desde localStorage
+    function obtenerCarrito() {
+      const carrito = localStorage.getItem('carrito');
+      return carrito ? JSON.parse(carrito) : [];
+    }
+
+    // Función para guardar el carrito en localStorage
+    function guardarCarrito(carrito) {
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    // Función para agregar un producto al carrito
+    function agregarAlCarrito(id, nombre, precio, descripcion) {
+      let carrito = obtenerCarrito();
+      
+      // Verificar si el producto ya existe en el carrito
+      const productoExistente = carrito.find(producto => producto.id === id);
+      
+      if (productoExistente) {
+        // Si existe, aumentar la cantidad
+        productoExistente.cantidad += 1;
+      } else {
+        // Si no existe, agregarlo al carrito
+        const nuevoProducto = {
+          id: id,
+          nombre: nombre,
+          precio: precio,
+          descripcion: descripcion,
+          cantidad: 1
+        };
+        carrito.push(nuevoProducto);
+      }
+      
+      // Guardar el carrito actualizado
+      guardarCarrito(carrito);
+      
+      // Actualizar el contador del carrito
+      actualizarContadorCarrito();
+      
+      // Mostrar confirmación
+      mostrarConfirmacion(nombre);
+    }
+
+    // Función para actualizar el contador del carrito
+    function actualizarContadorCarrito() {
+      const carrito = obtenerCarrito();
+      const totalItems = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+      document.getElementById('cart-count').textContent = totalItems;
+    }
+
+    // Función para mostrar modal de confirmación
+    function mostrarConfirmacion(nombreProducto) {
+      const mensaje = document.getElementById('mensaje-confirmacion');
+      mensaje.textContent = `"${nombreProducto}" ha sido agregado a tu carrito.`;
+      
+      // Mostrar el modal usando Bootstrap
+      const modal = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
+      modal.show();
+    }
+
+    // Función que se ejecuta cuando la página se carga
+    document.addEventListener('DOMContentLoaded', function() {
+      // Actualizar el contador del carrito al cargar la página
+      actualizarContadorCarrito();
+    });
+    /*
+    EXPLICACIÓN DEL FLUJO COMPLETO DEL CARRITO:
+
+    1. PÁGINA DE PRODUCTOS (productos.html):
+       - Muestra todos los productos disponibles
+       - Cada producto tiene un botón "Agregar al Carrito"
+       - Al hacer clic, se ejecuta agregarAlCarrito() con los datos del producto
+       - Los datos se guardan en localStorage
+       - Se muestra una confirmación al usuario
+
+    2. LOCALSTORAGE:
+       - Actúa como "base de datos temporal" en el navegador del usuario
+       - Guarda un array de objetos con los productos del carrito
+       - Estructura de cada producto:
+         {
+           id: 1,
+           nombre: "Torta de Chocolate",
+           precio: 15000,
+           descripcion: "Deliciosa torta...",
+           cantidad: 2
+         }
+
+    3. PÁGINA DEL CARRITO (carrito.html):
+       - Lee los datos desde localStorage
+       - Muestra todos los productos agregados
+       - Permite modificar cantidades o eliminar productos
+       - Calcula totales automáticamente
+       - Al finalizar compra, limpia el localStorage
+
+    4. PERSISTENCIA:
+       - El carrito se mantiene aunque el usuario:
+         * Cierre el navegador
+         * Navegue a otras páginas
+         * Recargue la página
+       - Solo se pierde si el usuario limpia el caché o completa la compra
+
+    5. CONTADOR EN TIEMPO REAL:
+       - El número en "Cart (X)" se actualiza automáticamente
+       - Suma todas las cantidades de todos los productos
+       - Se mantiene sincronizado en todas las páginas  */
+    </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

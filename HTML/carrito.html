@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+
+  <header>
+    <!-- Barra superior con menu de hamburguesa responsivo-->
+    <!-- el logo-->
+    <nav class="navbar navbar-expand-lg" style="background-color: #c69c6d;"><!--el navbar-expand-lg funciona para que el menu se vea expandido en pantallas grandes, usando lg (materia de clases estudien)-->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+                                <img src="images/logo.jpg" alt="logo" width="30" height="24">
+                                PMS©
+                            </a>
+
+        <!--el botón de hamburguesa en si-->
+        <!--navbar-toggler es el botón hamburguesa que aparece al achicar la pantalla-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> <!--se usa span en vez de div porque solamente se usará en pantallas pequeñas-->
+      </button>
+
+      <!-- mlos links que usamos-->
+      <div class="collapse navbar-collapse" id="mainNavbar"> <!--collapse nabvar se usa para ocultar o mostrar usando el click-->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="blogs/blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <!--y el carrito igual que con pantalla grande-->
+      <span class="navbar-text text-white fw-bold"> <!--text white para dejarlo blanco porque creo que hay problemas con el css-->
+          Cart (0)
+        </span>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  
+  <!-- Hero / Banner principal -->
+  <main class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-4">Mi carrito de compras</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Productos en el carrito -->
+            <div class="col-lg-8">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>Productos en tu carrito</h4>
+                    <button class="btn btn-secondary btn-sm" onclick="limpiarCarrito()">Limpiar Carrito</button>
+                </div>
+
+                <div id="carrito-productos">
+                    <!-- Los productos se cargarán aquí dinámicamente -->
+                </div>
+
+                <div id="carrito-vacio" class="text-center py-5" style="display: none;">
+                    <h5 class="text-muted">Tu carrito está vacío</h5>
+                    <p class="text-muted">Agrega algunos productos desde nuestra <a href="productos.html">página de productos</a></p>
+                </div>
+            </div>
+
+            <!-- Resumen del pedido -->
+            <div class="col-lg-4">
+                <div class="card border-0" style="background-color: #f7e7d3;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center mb-4">Resumen del pedido</h5>
+                        
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$ 0</span>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Envío:</span>
+                            <span>Gratis</span>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>TOTAL:</strong>
+                            <strong id="total">$ 0</strong>
+                        </div>
+                        
+                        <button class="btn mi-button w-100 py-2" onclick="procederPago()">
+                            PAGAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  <!-- Footer -->
+<footer>
+    <!-- Información de la empresa -->
+    <div class="footer-section footer-info">
+        <p>© 2025, Pastelería Mil Sabores. Todos los derechos reservados.</p>
+        <p>Pastelería Mil Sabores, el logotipo de Pastelería Mil Sabores y los nombres de nuestros productos son marcas comerciales o marcas registradas de Pastelería Mil Sabores en Chile.</p>
+        <p>Otras marcas o nombres de productos son marcas comerciales de sus respectivos propietarios.</p>
+    </div>
+
+    <!-- Categorías y métodos de pago -->
+    <div class="footer-section">
+        <div class="footer-categories">
+            <a href="#">Categoría X</a>
+            <a href="productos.html">Productos</a>
+            <a href="#">Categoría X</a>
+        </div>
+        
+        <div class="payment-icons">
+            <img src="images/utiles/visa.png" alt="Visa">
+            <img src="images/utiles/mastercard.png" alt="MasterCard">
+            <img src="images/utiles/redcompra.png" alt="RedCompra">
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-section footer-right newsletter">
+        <h4>Mantente al tanto de más noticias</h4>
+        <form action="#" method="post">
+            <input type="email" placeholder="Ingresar correo" required>
+            <button type="submit">Suscribirse</button>
+        </form>
+    </div>
+</footer>
+ <script>
+        // EXPLICACIÓN DE LOCALSTORAGE:
+        // LocalStorage es una API del navegador que permite almacenar datos de forma persistente
+        // en el dispositivo del usuario. Los datos se mantienen incluso después de cerrar el navegador.
+        // Es perfecto para carritos de compra porque:
+        // 1. Los productos se mantienen aunque el usuario cierre la página
+        // 2. No requiere servidor o base de datos
+        // 3. Es fácil de implementar
+        // 4. Los datos están disponibles instantáneamente
+
+
+        // Función para inicializar el carrito con productos de ejemplo (solo para demo)
+        function inicializarCarritoDemo() {
+            // Verificamos si ya hay productos en localStorage
+            const carritoExistente = obtenerCarrito();
+            
+            // Si no hay productos, agregamos los de ejemplo
+            if (carritoExistente.length === 0) {
+                localStorage.setItem('carrito', JSON.stringify(productosEjemplo));
+            }
+        }
+
+        // Función para obtener el carrito desde localStorage
+        function obtenerCarrito() {
+            // localStorage.getItem() recupera los datos guardados
+            // JSON.parse() convierte el string guardado de vuelta a un array de objetos
+            const carrito = localStorage.getItem('carrito');
+            return carrito ? JSON.parse(carrito) : [];
+        }
+
+        // Función para guardar el carrito en localStorage
+        function guardarCarrito(carrito) {
+            // JSON.stringify() convierte el array de objetos a string para guardarlo
+            // localStorage.setItem() guarda los datos en el navegador
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+        }
+
+        // Función para mostrar los productos del carrito
+        function mostrarCarrito() {
+            const carrito = obtenerCarrito();
+            const contenedorProductos = document.getElementById('carrito-productos');
+            const carritoVacio = document.getElementById('carrito-vacio');
+
+            if (carrito.length === 0) {
+                contenedorProductos.innerHTML = '';
+                carritoVacio.style.display = 'block';
+                return;
+            }
+
+            carritoVacio.style.display = 'none';
+            contenedorProductos.innerHTML = '';
+
+            //acá genera su propio bloque html (literalmente bloquecitos) para mostrar los productos que se eligen en productos.html no tienen imagenes porque ni idea como traerlos
+            carrito.forEach(producto => {
+                const productoHTML = `
+                    <div class="row border rounded p-3 mb-3 bg-white" data-producto-id="${producto.id}">
+                        <div class="col-2 d-flex align-items-center justify-content-center">
+                            <div style="width: 80px; height: 80px; background-color: #f7e7d3; border: 2px solid #e0c9a6; display: flex; align-items: center; justify-content: center; border-radius: 5px;">
+                                <span style="font-size: 2rem;">✕</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="mb-1">${producto.nombre}</h6>
+                            <p class="text-muted small mb-2">${producto.descripcion}</p>
+                            <strong>$ ${producto.precio.toLocaleString()}</strong>
+                        </div>
+                        <div class="col-2 d-flex align-items-center justify-content-center">
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn mi-button btn-sm rounded-circle" style="width: 30px; height: 30px; padding: 0;" onclick="cambiarCantidad(${producto.id}, -1)">-</button>
+                                <span class="mx-2">${producto.cantidad}</span>
+                                <button class="btn mi-button btn-sm rounded-circle" style="width: 30px; height: 30px; padding: 0;" onclick="cambiarCantidad(${producto.id}, 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="col-2 d-flex align-items-center justify-content-center">
+                            <button class="btn btn-sm" onclick="eliminarProducto(${producto.id})" style="color: #666;">
+                                <i class="fas fa-info-circle"></i> ℹ
+                            </button>
+                        </div>
+                    </div>
+                `;
+                contenedorProductos.innerHTML += productoHTML;
+            });
+
+            actualizarTotales();
+            actualizarContadorCarrito();
+        }
+
+        // Función para cambiar la cantidad de un producto
+        function cambiarCantidad(productoId, cambio) {
+            let carrito = obtenerCarrito();
+            
+            // Buscamos el producto en el carrito
+            const producto = carrito.find(p => p.id === productoId);
+            
+            if (producto) {
+                producto.cantidad += cambio;
+                
+                // Si la cantidad llega a 0 o menos, eliminamos el producto
+                if (producto.cantidad <= 0) {
+                    carrito = carrito.filter(p => p.id !== productoId);
+                }
+                
+                // Guardamos los cambios en localStorage
+                guardarCarrito(carrito);
+                
+                // Actualizamos la vista
+                mostrarCarrito();
+            }
+        }
+
+        // Función para eliminar un producto completamente
+        function eliminarProducto(productoId) {
+            let carrito = obtenerCarrito();
+            carrito = carrito.filter(p => p.id !== productoId);
+            guardarCarrito(carrito);
+            mostrarCarrito();
+        }
+
+        // Función para limpiar todo el carrito
+        function limpiarCarrito() {
+            if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
+                // localStorage.removeItem() elimina completamente los datos
+                localStorage.removeItem('carrito');
+                mostrarCarrito();
+            }
+        }
+
+        // Función para actualizar los totales
+        function actualizarTotales() {
+            const carrito = obtenerCarrito();
+            
+            let subtotal = 0;
+            carrito.forEach(producto => {
+                subtotal += producto.precio * producto.cantidad;
+            });
+
+            document.getElementById('subtotal').textContent = `$ ${subtotal.toLocaleString()}`;
+            document.getElementById('total').textContent = `$ ${subtotal.toLocaleString()}`;
+        }
+
+        // Función para actualizar el contador del carrito en el header
+        function actualizarContadorCarrito() {
+            const carrito = obtenerCarrito();
+            const totalItems = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+            document.getElementById('cart-items-count').textContent = totalItems;
+        }
+
+        // Función para proceder al pago
+        function procederPago() {
+            const carrito = obtenerCarrito();
+            
+            if (carrito.length === 0) {
+                alert('No hay productos en el carrito');
+                return;
+            }
+
+            // Aquí normalmente redirigiríamos a una página de pago
+            alert('Redirigiendo al sistema de pago...\n\nImaginen que están viendo un pago');
+            
+            // Para la demo, limpiamos el carrito después del "pago"
+            localStorage.removeItem('carrito');
+            mostrarCarrito();
+        }
+
+        // Inicializar la página cuando se carga
+        document.addEventListener('DOMContentLoaded', function() {
+            // Para la demo, inicializamos con productos de ejemplo
+            inicializarCarritoDemo();
+            
+            // Mostramos el carrito
+            mostrarCarrito();
+        });
+        </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
