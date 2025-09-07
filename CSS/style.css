@@ -1,8 +1,8 @@
-
 /* Eliminar margenes y padding para espacio entre medio*/
 * {
   box-sizing: border-box;
 }
+
 /*variables para el css dado que en todas las paginas usamos los mismos colores (en caso de cambios es más rapido y buena practica)*/
 :root {
   --color-primary: #c69c6d;
@@ -13,12 +13,16 @@
   --color-border: #e0c9a6;
   --transition: all 0.3s ease;
 }
+
 /*aqui se pone el eslito general con la fuente (elegi una mega default) y colores de fondo */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--color-background); 
   color: var(--color-text);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* arreglar los colores de nav sobreescribiendo boostrap */
@@ -33,6 +37,7 @@ nav .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;    
 }
+
 .navbar .navbar-brand { /* segun yo no hace mucho cambio pero le da color al logo(literalmente)*/
   color: #fff !important;
   font-weight: 600;
@@ -48,6 +53,7 @@ header {
 header .logo img {
   border-radius: 4px;
 }
+
 /*todo lo que tiene que ver con nav ul es el estilo de navegacion, o sea el menú de enlace en realidad solo lo centré y lo hice responsivo (además de darle color aunque es blanco lo pueden cambiar) */
 header nav ul {
   list-style: none;
@@ -115,6 +121,7 @@ header .cart {
   text-decoration: none;
   display: inline-block;
 }
+
 .hero-text button:hover {
   background-color: var(--color-primary-dark);
   transform: translateY(-2px);
@@ -137,13 +144,11 @@ header .cart {
   cursor: pointer;
   transition: var(--transition);
   text-decoration: none;   
-   
 }
 
 .btn-productos-home:hover {
   background-color: #a67843;
 }
-
 
 /* el estilo de index para los productos */
 .productos-home {
@@ -173,79 +178,145 @@ header .cart {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 /* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
 
 
-
-
-/* aquí el pie de pagina con botones aunque probablmente haya que quitarlo si es que usamos boostrap(lo cual de hecho estamos usando) */
 footer {
   background-color: var(--color-text);
   color: #fff;
-  padding: 20px 40px;
-
+  padding: 30px 20px;
+  margin-top: auto;
   
   display: flex; 
   justify-content: space-between; /* lo que hace esto es repartir el footer left y right para que no quede el email solo y feo */
   align-items: flex-start; 
   flex-wrap: wrap; /* por si acaso hacerlo responsivo */
-
+  gap: 20px;
 }
 
+/* Secciones del footer */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
 
 .footer-info {
-  font-size: smaller;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+.footer-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-categories a {
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.footer-categories a:hover {
+  color: var(--color-primary);
 }
 
 .footer-categories span {
-  
   margin-bottom: 20px;
   display: inline-block;  
   color: #fff;
   cursor: pointer;
   text-decoration: none;   
 }
+
 .footer-categories span:hover {
   color: #a0a0a0;
 }
 
-.payment-icons img {
-  width: 50px;      
-  margin-right: 10px;
-  margin-bottom: 20px;
-  
+.payment-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
 }
 
-.footer-right{
+.payment-icons img {
+  width: 50px;      
+  height: auto;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.footer-right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-width: 280px;
 }
 
+.newsletter h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
 
-
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
 
 footer input[type="email"] {
-  padding: 0.5rem;
+  padding: 10px;
   border: none;
   border-radius: 0.375rem;
   width: 100%;
   margin-bottom: 0.5rem;
+  font-size: 0.9rem;
 }
 
 footer button {
   background-color: var(--color-primary);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 10px 15px;
   border-radius: 0.375rem;
   color: #fff;
   cursor: pointer;
   transition: var(--transition);
   width: 100%;
+  font-weight: 500;
 }
 
 footer button:hover {
   background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Responsivo para el footer */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-section {
+    width: 100%;
+    margin-bottom: 20px;
+    min-width: unset;
+  }
+  
+  .payment-icons {
+    justify-content: center;
+  }
+  
+  .footer-right {
+    align-items: center;
+  }
 }
 
 /* Titulo de Home para la lista de productos más vendidos*/
@@ -298,20 +369,19 @@ footer button:hover {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 /* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
 
-.mi-button{
+.mi-button {
   background-color: #c69c6d;
   color: white;
 }
 
 .mi-button:hover {
-    background-color: #a67843;
-    cursor: pointer;
-    color: white;
+  background-color: #a67843;
+  cursor: pointer;
+  color: white;
 }
-
-
 
 .text-center {
   font-size: 20px;
@@ -346,7 +416,7 @@ footer button:hover {
   opacity: 1;
 }
 
-
-
-
-
+/* Asegurar que el contenido principal ocupe el espacio disponible */
+main, .container, section {
+  flex-grow: 1;
+}
