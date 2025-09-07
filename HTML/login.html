@@ -62,18 +62,31 @@
     <div class="container">
       <form action="" class="row mt-3 g-3 needs-validation" novalidate>
           <div class="col-6 position-relative">
-              <label for="emailId" class="form-label">Correo</label>
-              <input type="text" class="form-control" id="emailId" required>
-              <div class="valid-tooltip"></div>
-              <!-- <div class="invalid-feedback"> -->
+              <label for="emailId" class="form-label">Correo
+                <span class="guiaValidacion">(?)
+                  <span class="guiaValidacion-texto">
+                    Debe terminar en:<br>
+                    • @duoc.cl<br>
+                    • @profesor.duoc.cl<br>
+                    • @gmail.com
+                  </span>
+                </span>
+              </label>
+              <input type="email" class="form-control" id="emailId" required maxlength="100" placeholder="ejemplo@duoc.cl" pattern="^[a-zA-Z0-9._%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$">
+              
               <div class="invalid-tooltip">
                   El correo no es válido.
               </div>
           </div>
           <div class="col-6 position-relative">
-              <label for="contraseñaId" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="contraseñaId" required>
-              <div class="valid-tooltip"></div>
+              <label for="contraseñaId" class="form-label">Contraseña
+                <span class="guiaValidacion">(?)
+                  <span class="guiaValidacion-texto">
+                    Debe tener entre 4-10 caracteres
+                  </span>
+                </span></label>
+              <input type="password" class="form-control" id="contraseñaId" required minlength="4" maxlength="10" placeholder="**********">
+              
               <div class="invalid-tooltip">
                   Contraseña incorrecta!
               </div>

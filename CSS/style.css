@@ -310,3 +310,42 @@ footer button:hover {
     cursor: pointer;
     color: white;
 }
+
+
+
+
+
+
+/* Tooltip */
+.guiaValidacion {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.guiaValidacion .guiaValidacion-texto {
+  visibility: hidden;
+  width: 220px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px;
+  position: absolute;
+  
+  bottom: 125%; 
+  
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.85rem;
+}
+
+.guiaValidacion:hover .guiaValidacion-texto {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
