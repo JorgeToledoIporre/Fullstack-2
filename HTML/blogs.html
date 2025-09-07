@@ -10,36 +10,40 @@
     <body>
         <!-- Barra superior -->
         <header>
-            <div class="container-fluid md-4 p-2">
-                <div class="row">
-                    <div class="col-2 logo">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="images/logo.jpg" alt="logo" width="30" height="24">
-                                PMS©
-                            </a>
-                    </div>
+        <!-- Barra superior con menu de hamburguesa responsivo-->
+        <!-- el logo-->
+        <nav class="navbar navbar-expand-lg" style="background-color: #c69c6d;"><!--el navbar-expand-lg funciona para que el menu se vea expandido en pantallas grandes, usando lg (materia de clases estudien)-->
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand text-white">
+            <img src="images/logo.jpg" alt="logo" width="30" height="24" class="d-inline-block align-text-top">PMS©
+            </a>
 
-                    <nav class="col-8">
-                        <ul class="row">
-                            <li class="col"><a href="index.html">Home</a></li>
-                            <li class="col"><a href="productos.html">Productos</a></li>
-                            <li class="col"><a href="nosotros.html">Nosotros</a></li>
-                            <li class="col"><a href="blogs.html">Blogs</a></li>
-                            <li class="col"><a href="contacto.html">Contacto</a></li>
-                        </ul>
-                    </nav >
-                    <!-- Carrito -->
-                    <div class="col-2 text-end cart">
-                        <p>Cart (0)</p>
-                    </div>
-                </div>
-            </div>
-        </header>
+            <!--el botón de hamburguesa en si-->
+            <!--navbar-toggler es el botón hamburguesa que aparece al achicar la pantalla-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> <!--se usa span en vez de div porque solamente se usará en pantallas pequeñas-->
+        </button>
 
-        <main>
-            <header class="container my-4 text-center">
-                <h1>NOTICIAS IMPORTANTES</h1>
-            </header>
+        <!-- mlos links que usamos-->
+        <div class="collapse navbar-collapse" id="mainNavbar"> <!--collapse nabvar se usa para ocultar o mostrar usando el click-->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="blogs.html">Blogs</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        
+        <!--y el carrito igual que con pantalla grande-->
+        <span class="navbar-text text-white fw-bold"> <!--text white para dejarlo blanco porque creo que hay problemas con el css-->
+            Cart (0)
+            </span>
+        </div>
+        </div>
+    </nav>
+    </header>
             
             <!-- ARTICULOS -->
             <article class="container" >
