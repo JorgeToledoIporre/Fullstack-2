@@ -150,15 +150,9 @@
 
 
         // Función para inicializar el carrito con productos de ejemplo (solo para demo)
-        function inicializarCarritoDemo() {
-            // Verificamos si ya hay productos en localStorage
-            const carritoExistente = obtenerCarrito();
-            
-            // Si no hay productos, agregamos los de ejemplo
-            if (carritoExistente.length === 0) {
-                localStorage.setItem('carrito', JSON.stringify(productosEjemplo));
-            }
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarCarrito();
+        });
 
         // Función para obtener el carrito desde localStorage
         function obtenerCarrito() {
