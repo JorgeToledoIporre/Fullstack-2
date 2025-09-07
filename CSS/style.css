@@ -350,3 +350,27 @@ footer button:hover {
 main, .container, section {
   flex-grow: 1;
 }
+
+/*CSS de sidebar administrador*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  padding-top: 20px;
+  background-color: #c69c6d;
+}
+
+.sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+}
+
+.main-admin {
+  height: 100%;
+  margin-left: 200px;
+  padding: 20px;
+}
