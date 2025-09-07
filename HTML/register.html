@@ -62,7 +62,7 @@
                 </span>
             </label>
             <input type="text" class="form-control" id="nameId" required maxlength="150" placeholder="Juanito Alcachofa Muñoz">
-            <div class="invalid-tooltip">El nombre ingresado no es válido.</div>
+            <div class="invalid-feedback">El nombre no es válido.</div>
           </div>
 
           <!--RUT-->
@@ -75,7 +75,7 @@
                 </span>
               </label>
               <input type="text" class="form-control" id="rutId" required minlength="7" maxlength="9" pattern="^[0-9]{7,8}[0-9Kk]$" placeholder="12345678K">
-              <div class="invalid-tooltip">El rut no es válido.</div>
+              <div class="invalid-feedback">El rut no es válido.</div>
           </div>
 
           <!--CORREO-->
@@ -94,7 +94,7 @@
                   </label>
                   <input type="email" class="form-control" id="emailId" required maxlength="100" placeholder="ejemplo@duoc.cl" pattern="^[a-zA-Z0-9._%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$">
                   
-                  <div class="invalid-tooltip">
+                  <div class="invalid-feedback">
                       El correo no es válido.
                   </div>
               </div>
@@ -109,8 +109,8 @@
                 </span></label>
               <input type="password" class="form-control" id="password" required minlength="4" maxlength="10" placeholder="**********">
               
-              <div class="invalid-tooltip">
-                  Contraseña no es válida!
+              <div class="invalid-feedback">
+                  La contraseña no es válida.
               </div>
           </div>
 
