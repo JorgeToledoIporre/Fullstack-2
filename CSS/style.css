@@ -313,8 +313,9 @@ footer button:hover {
 
 
 
-
-
+.text-center {
+  font-size: 20px;
+}
 
 /* Tooltip */
 .guiaValidacion {
