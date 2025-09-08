@@ -344,29 +344,19 @@ footer button:hover {
   margin-bottom: 10px;
 }
 body.admin-page {
-    background-color: #f8f4e1; /* color de fondo */
-    color: #222;              /* color del texto */
+    background-color: #f8f4e1; 
+    color: #222;              
 }
 
 body.admin-page .sidebar {
-    background-color: #e0c9a6; /* sidebar única */
+    background-color: #e0c9a6; 
 }
 
 body.admin-page .nav-link {
-    color: #000 !important;  /* links negros */
+    color: #000 !important; 
 }
 body.admin-page .nav-link:hover {
-    color: #663300 !important; /* café oscuro al pasar el mouse */
-}
-
-/* 🎨 Tema de CARRITO */
-body.cart-page {
-    background-color: #f0f9ff;
-    color: #333;
-}
-
-body.cart-page .sidebar {
-    background-color: #cce5ff;
+    color: #663300 !important; 
 }
 
 /* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
