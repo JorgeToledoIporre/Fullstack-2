@@ -13,8 +13,8 @@
     <body>
 
         <!--Menu-->
-        <div class="sidebar">
-            <nav class="nav flex-column">
+        <div class="sidebar d-flex flex-column justify-content-between"><!--d-flex flex-column convierte la sidebar en un contenedor vertical y justify-content-between separa los dos bloques hacia arriba y hacia abajo-->
+            <nav class="nav flex-column flex-grow-1">  <!--flex-grow-1 lo convierte responsivo, hace que se reparta bien en la pantalla-->
 
                 <!--company-->
                 <a class="nav-link" href="#">
@@ -23,7 +23,7 @@
                 </a>
 
                 <!--Links arriba-->
-                <div>
+                <div class="flex-grow-1"> <!--se encarga de empujar el resto hacia abajo-->
                     <a href="#" class="nav-link">
                         <span class="icon">
                             <i class="bi bi-grid"></i>
