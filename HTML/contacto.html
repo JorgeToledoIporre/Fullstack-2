@@ -46,7 +46,81 @@
     </div>
   </nav>
 </header>
-        
+
+  <!-- Logo y nombre de la empresa-->
+  <div>
+    <img src="images/LogoEmpresa.jpg" class="img-fluid rounded mx-auto d-block" alt="LogoEmpresa">
+      <header class="container text-center">
+          <h1>Pastelería Mil Sabores</h1>
+        </header>
+      </div>
+
+  <section class="container my-5">
+  <div class="text-center">Formulario de Contacto</div>
+
+  
+    <!-- Formulario de Contacto-->
+    <div class="container">
+      <form action="" class="row mt-3 g-3 needs-validation" novalidate>
+
+          <!--NOMBRE COMPLETO-->
+          <div class="col-6 position-relative">
+            <label for="nameId" class="form-label">Nombre Completo * 
+              <span class="guiaValidacion">(?)
+                  <span class="guiaValidacion-texto">
+                    • Obligatorio<br>
+                    • Max: 150 caracteres
+                  </span>
+                </span>
+            </label>
+            <input type="text" class="form-control" id="nameId" required maxlength="150" placeholder="Juanito Alcachofa Muñoz">
+            <div class="invalid-feedback">El nombre no es válido.</div>
+          </div>
+
+          <!--CORREO-->
+          <div class="col-6 position-relative">
+              <label for="emailId" class="form-label">Correo
+                <span class="guiaValidacion">(?)
+                  <span class="guiaValidacion-texto">
+                    Debe terminar en:<br>
+                    • @duoc.cl<br>
+                    • @profesor.duoc.cl<br>
+                    • @gmail.com
+                  </span>
+                </span>
+              </label>
+              <input type="email" class="form-control" id="emailId" required maxlength="100" placeholder="ejemplo@duoc.cl" pattern="^[a-zA-Z0-9._%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$">
+              
+              <div class="invalid-tooltip">
+                  El correo no es válido.
+              </div>
+          </div>
+
+          <!--CONTENIDO-->
+          <div class="col-13 position-relative">
+            <label for="contenidoId" class="form-label">Contenido * 
+              <span class="guiaValidacion">(?)
+                  <span class="guiaValidacion-texto">
+                    • Obligatorio<br>
+                    • Max: 500 caracteres
+                  </span>
+                </span>
+            </label>
+
+             <textarea class="form-control mx-auto" id="contenidoId" 
+                required maxlength="500" 
+                placeholder="Describa su problema aquí."
+                rows="11" 
+                style="resize: none;"></textarea>
+
+          <div class="col-13 mx-auto text-end">
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px; margin-bottom: 120px; width: 150px;">Enviar</button>
+          </div>
+
+      </form>
+  </div>
+</section>
+
    <!-- Footer -->
   <footer class="footer">
     <div class="footer-info">
@@ -59,7 +133,7 @@
       <div class="footer-categories">  
         <a href=""><span>Categoria X</span></a> |
         <a href="productos.html"><span>Productos</span></a> |
-        <a href=""><span>Categoria X</span></a>
+        <a href="contacto.html"><span>Contacto</span></a>
       </div>
     
       <div class="payment-icons">
