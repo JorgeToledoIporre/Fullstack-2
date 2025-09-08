@@ -5,18 +5,18 @@
 
 /*variables para el css dado que en todas las paginas usamos los mismos colores (en caso de cambios es más rapido y buena practica)*/
 :root {
-  --color-primary: #c69c6d;
-  --color-primary-dark: #a67843;
-  --color-text: #3a2d1f;
-  --color-background: #fffaf3;
-  --color-light: #f7e7d3;
-  --color-border: #e0c9a6;
+  --color-primary: #FFC0CB;       /* Rosa suave */
+  --color-primary-dark: #8B4513;  /* Chocolate */
+  --color-text: #5D4037;          /* Marrón oscuro */
+  --color-background: #FFF5E1;    /* Crema pastel */
+  --color-light: #F7E7D3;         /* Un tono crema más claro */
+  --color-border: #E0C9A6;        /* Para bordes suaves */
   --transition: all 0.3s ease;
 }
 
 /*aqui se pone el eslito general con la fuente (elegi una mega default) y colores de fondo */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: var(--color-background); 
   color: var(--color-text);
   line-height: 1.6;
@@ -45,7 +45,7 @@ nav .nav-link:hover {
 
 /*el header en la cual todos están igual así que deberia estar bien con los colores y el padding (el espacio en contra el borde) */
 header {
-  background-color: #c69c6d; /* según yo es como un color de pan siono */
+  background-color: var(--color-primary); /* según yo es como un color de pan siono */
   color: #fff;
   padding: 10px 0;
 }
@@ -86,15 +86,18 @@ header .cart {
 }
 
 .user-links a {
-  color: #c69c6d;
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: bold;
 }
 
 .user-links a:hover {
-  color: #3a2d1f;
+  color: var(--color-text);
 }
-
+/* Fuente especial para títulos y encabezados */
+h1, h2, h3, h4, h5 {
+  font-family: "Pacifico", cursive;
+}
 /* de aquí para abajo es todo lo de hero, o sea la sección principal*/
 .hero {
   background-color: var(--color-light);
@@ -135,7 +138,7 @@ header .cart {
 
 .btn-productos-home {
   display: inline-block;  
-  background-color: #c69c6d;
+  background-color: var(--color-primary);
   border: none;
   padding: 10px 20px;
   color: #fff;
@@ -147,7 +150,7 @@ header .cart {
 }
 
 .btn-productos-home:hover {
-  background-color: #a67843;
+  background-color: var(--color-primary-dark);
 }
 
 /* el estilo de index para los productos */
@@ -178,6 +181,42 @@ header .cart {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+/* estilo de pagina nosotros*/
+.nosotros-section {
+  background-color: var(--color-light);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.nosotros-section h1,
+.nosotros-section h2 {
+  font-family: "Pacifico", cursive; /* según el PDF */
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.nosotros-section p {
+  font-family: "Lato", sans-serif; /* según el PDF */
+  font-size: 1rem;
+  color: var(--color-text);
+  text-align: justify;
+}
+
+.nosotros-equipo {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.nosotros-equipo h2 {
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.nosotros-equipo p {
+  font-weight: 500;
+}
 
 /* aquí el pie de pagina con botones aunque probablmente haya que quitarlo si es que usamos boostrap(lo cual de hecho estamos usando) */
 footer {
@@ -185,21 +224,17 @@ footer {
   color: #fff;
   padding: 20px 40px;
 
-  
   display: flex; 
   justify-content: space-between; /* lo que hace esto es repartir el footer left y right para que no quede el email solo y feo */
   align-items: flex-start; 
   flex-wrap: wrap; /* por si acaso hacerlo responsivo */
-
 }
-
 
 .footer-info {
   font-size: smaller;
 }
 
 .footer-categories span {
-  
   margin-bottom: 20px;
   display: inline-block;  
   color: #fff;
@@ -214,7 +249,6 @@ footer {
   width: 50px;      
   margin-right: 10px;
   margin-bottom: 20px;
-  
 }
 
 .footer-right{
@@ -222,9 +256,6 @@ footer {
   flex-direction: column;
   align-items: flex-start;
 }
-
-
-
 
 footer input[type="email"] {
   padding: 0.5rem;
@@ -252,7 +283,7 @@ footer button:hover {
 /* Titulo de Home para la lista de productos más vendidos*/
 .productos-home-title h3 {
   display: inline-block;
-  border-bottom: 2px solid #000; /* línea de subrayado */
+  border-bottom: 2px solid var(--color-text); /* línea de subrayado */
   padding-bottom: 5px;
   margin-bottom: 0px;
   margin-top: 15px;
@@ -282,7 +313,7 @@ footer button:hover {
 
 .productos article { /*el estilo o color para cada cuadrado con bordes más suaves  */
   background-color: #fff;
-  border: 1px solid #e0c9a6;
+  border: 1px solid var(--color-border);
   border-radius: 8px; 
   text-align: center;
   padding: 15px;
@@ -303,12 +334,12 @@ footer button:hover {
 /* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
 
 .mi-button {
-  background-color: #c69c6d;
+  background-color: var(--color-primary);
   color: white;
 }
 
 .mi-button:hover {
-  background-color: #a67843;
+  background-color: var(--color-primary-dark);
   cursor: pointer;
   color: white;
 }
@@ -334,7 +365,6 @@ footer button:hover {
   position: absolute;
   
   bottom: 125%; 
-  
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
@@ -359,7 +389,7 @@ main, .container, section {
   height: 100%;
   width: 200px;
   padding-top: 20px;
-  background-color: #c69c6d;
+  background-color: var(--color-primary);
 }
 
 .sidebar .nav-link {
