@@ -343,6 +343,21 @@ footer button:hover {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+body.admin-page {
+    background-color: #f8f4e1; 
+    color: #222;              
+}
+
+body.admin-page .sidebar {
+    background-color: #e0c9a6; 
+}
+
+body.admin-page .nav-link {
+    color: #000 !important; 
+}
+body.admin-page .nav-link:hover {
+    color: #663300 !important; 
+}
 
 /* ----- de aquí deberian de hacer sus propios estilos para cada pagina aunque no me queda muy claro con lo de boostrap, deberia de ver-------*/
 
@@ -406,6 +421,7 @@ main, .container, section {
 }
 
 .sidebar .nav-link {
+  color: var(--color-text) !;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -413,6 +429,7 @@ main, .container, section {
 }
 
 .main-admin {
+  color: var(--color-text);
   height: 100%;
   margin-left: 200px;
   padding: 20px;
