@@ -21,9 +21,7 @@
                     <i class="bi bi-cake2"></i>
                     PMS
                 </a>
-                
-                <hr class="sidebar-divider" style="color: #fff;">
-                
+
                 <!--Links arriba-->
                 <div class="flex-grow-1"> <!--se encarga de empujar el resto hacia abajo-->
                     <a href="#" class="nav-link">
@@ -50,7 +48,7 @@
                         </span>
                         <span class="description">Reports</span>
                     </a>
-                    <a href="usuarios.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <span class="icon">
                             <i class="bi bi-person"></i>
                         </span>
@@ -90,29 +88,39 @@
                         </span>
                         <span class="description">Help</span>
                     </a>
-
-
                 </div>
-                                    
-                <hr class="sidebar-divider" style="color: #fff;">
+
                 <!--Perfil-->
                 <a class="nav-link" href="#">
                     <i class="bi bi-person-circle"></i>
                     Perfil
                 </a>
-
             </nav>
         </div>
 
-        <main class="main-admin container">
-            <div class="row flex-column">
-                <section class="col-12">
-                    <h1>¡Hola administrador!</h1>
-                    <p>Hola mundo hola a todos</p>
-                </section>
+  <main class="main-admin container mt-4">
+        <h2>Nuevo Producto</h2>
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control">
             </div>
-        </main>
-
+            <div class="mb-3">
+                <label class="form-label">Categoría</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Stock</label>
+                <input type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Precio</label>
+                <input type="number" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Registrar Producto</button>
+        </form>
+    </main>
+</body>
 
 
 

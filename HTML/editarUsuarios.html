@@ -21,9 +21,7 @@
                     <i class="bi bi-cake2"></i>
                     PMS
                 </a>
-                
-                <hr class="sidebar-divider" style="color: #fff;">
-                
+
                 <!--Links arriba-->
                 <div class="flex-grow-1"> <!--se encarga de empujar el resto hacia abajo-->
                     <a href="#" class="nav-link">
@@ -50,7 +48,7 @@
                         </span>
                         <span class="description">Reports</span>
                     </a>
-                    <a href="usuarios.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <span class="icon">
                             <i class="bi bi-person"></i>
                         </span>
@@ -90,28 +88,35 @@
                         </span>
                         <span class="description">Help</span>
                     </a>
-
-
                 </div>
-                                    
-                <hr class="sidebar-divider" style="color: #fff;">
+
                 <!--Perfil-->
                 <a class="nav-link" href="#">
                     <i class="bi bi-person-circle"></i>
                     Perfil
                 </a>
-
             </nav>
         </div>
 
-        <main class="main-admin container">
-            <div class="row flex-column">
-                <section class="col-12">
-                    <h1>¡Hola administrador!</h1>
-                    <p>Hola mundo hola a todos</p>
-                </section>
+         <main class="main-admin container mt-4">
+        <h2>Editar Usuario</h2>
+        <form>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" class="form-control" value="Juan Pérez">
             </div>
-        </main>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="email" id="correo" class="form-control" value="juanperez@mail.com">
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" id="telefono" class="form-control" value="+56 9 9999 9999">
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+        </form>
+    </main>
+</body>
 
 
 

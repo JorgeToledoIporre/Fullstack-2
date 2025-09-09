@@ -79,6 +79,7 @@
             <div class="col-lg-4">
                 <div class="card border-0" style="background-color: #f7e7d3;">
                     <div class="card-body">
+                        
                         <h5 class="card-title text-center mb-4">Resumen del pedido</h5>
                         
                         <div class="d-flex justify-content-between mb-2">
@@ -97,7 +98,13 @@
                             <strong>TOTAL:</strong>
                             <strong id="total">$ 0</strong>
                         </div>
-                        
+
+                        <div class="mb-3">
+                            <input type="text" id="codigo-descuento" class="form-control" placeholder="Código de descuento">
+                            <button class="btn mi-button mt-2" onclick="aplicarDescuento()">Aplicar Código</button>
+                            <p id="mensaje-descuento" class="mt-1"></p>
+                        </div>
+
                         <button class="btn mi-button w-100 py-2" onclick="procederPago()">
                             PAGAR
                         </button>
@@ -139,6 +146,56 @@
   </footer>
 
  <script>
+
+        //descuento
+        let descuentoAplicado = false; 
+
+        function aplicarDescuento() {
+        const codigoInput = document.getElementById('codigo-descuento');
+        const mensaje = document.getElementById('mensaje-descuento');
+        const codigo = codigoInput.value.trim();
+
+        if (descuentoAplicado) {
+            mensaje.textContent = "El descuento ya fue aplicado.";
+            mensaje.className = "text-danger";
+            return;
+        }
+
+        if (codigo.toLowerCase() === 'felices50') {
+            descuentoAplicado = true;
+            mensaje.textContent = "¡Descuento aplicado! 10% de descuento.";
+            mensaje.className = "text-success";
+
+            // Aplicar descuento y actualizar totales
+            actualizarTotales();
+        } else {
+            mensaje.textContent = "Código inválido.";
+            mensaje.className = "text-danger";
+        }
+
+        // Limpiar el input
+        codigoInput.value = '';
+        }
+
+        function actualizarTotales() {
+            const carrito = obtenerCarrito();
+            
+            let subtotal = 0;
+            carrito.forEach(producto => {
+                subtotal += producto.precio * producto.cantidad;
+            });
+
+            let total = subtotal;
+
+            // Aplicar 10% de descuento si corresponde
+            if (descuentoAplicado) {
+                total = subtotal * 0.9;
+            }
+
+            document.getElementById('subtotal').textContent = `$ ${subtotal.toLocaleString()}`;
+            document.getElementById('total').textContent = `$ ${total.toLocaleString()}`;
+        }
+
         // EXPLICACIÓN DE LOCALSTORAGE:
         // LocalStorage es una API del navegador que permite almacenar datos de forma persistente
         // en el dispositivo del usuario. Los datos se mantienen incluso después de cerrar el navegador.
@@ -260,6 +317,7 @@
         }
 
         // Función para actualizar los totales
+        /*
         function actualizarTotales() {
             const carrito = obtenerCarrito();
             
@@ -271,7 +329,7 @@
             document.getElementById('subtotal').textContent = `$ ${subtotal.toLocaleString()}`;
             document.getElementById('total').textContent = `$ ${subtotal.toLocaleString()}`;
         }
-
+        */
         // Función para actualizar el contador del carrito en el header
         function actualizarContadorCarrito() {
             const carrito = obtenerCarrito();

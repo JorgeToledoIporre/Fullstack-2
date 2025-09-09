@@ -21,9 +21,7 @@
                     <i class="bi bi-cake2"></i>
                     PMS
                 </a>
-                
-                <hr class="sidebar-divider" style="color: #fff;">
-                
+
                 <!--Links arriba-->
                 <div class="flex-grow-1"> <!--se encarga de empujar el resto hacia abajo-->
                     <a href="#" class="nav-link">
@@ -50,7 +48,7 @@
                         </span>
                         <span class="description">Reports</span>
                     </a>
-                    <a href="usuarios.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <span class="icon">
                             <i class="bi bi-person"></i>
                         </span>
@@ -90,28 +88,64 @@
                         </span>
                         <span class="description">Help</span>
                     </a>
-
-
                 </div>
-                                    
-                <hr class="sidebar-divider" style="color: #fff;">
+
                 <!--Perfil-->
                 <a class="nav-link" href="#">
                     <i class="bi bi-person-circle"></i>
                     Perfil
                 </a>
-
             </nav>
         </div>
 
-        <main class="main-admin container">
-            <div class="row flex-column">
-                <section class="col-12">
-                    <h1>¡Hola administrador!</h1>
-                    <p>Hola mundo hola a todos</p>
-                </section>
+        <main class="main-admin p-4">
+        <h2>Nuevo Usuario</h2>
+        <form class="mt-3">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Ingrese nombre">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Apellido</label>
+                    <input type="text" class="form-control" placeholder="Ingrese apellido">
+                </div>
             </div>
-        </main>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="ejemplo@email.com">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" placeholder="+56 9 1234 5678">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input type="text" class="form-control" placeholder="Ingrese dirección">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Rol</label>
+                <select class="form-select">
+                    <option>Administrador</option>
+                    <option>Empleado</option>
+                    <option>Cliente</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Notas</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </form>
+    </main>
+</body>
 
 
 
