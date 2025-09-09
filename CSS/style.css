@@ -434,3 +434,16 @@ main, .container, section {
   margin-left: 200px;
   padding: 20px;
 }
+
+.nos-img-50anios {
+  height: 300px;
+  width: 400px;
+}
+.nos-img-mision {
+  height: 300px;
+  width: 400px;
+}
+.nos-img-vision {
+  height: 300px;
+  width: 400px;
+}
