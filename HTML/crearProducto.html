@@ -98,31 +98,149 @@
             </nav>
         </div>
 
-  <main class="main-admin container mt-4">
+    <main class="main-admin container mt-4">
         <h2>Nuevo Producto</h2>
-        <form>
+        <form id="formProducto">
             <div class="mb-3">
-                <label class="form-label">Nombre</label>
-                <input type="text" class="form-control">
+                <label class="form-label">Código Producto *</label>
+                <input type="text" class="form-control" placeholder="Código" required>
+                <small class="text-muted">Mínimo 3 caracteres</small>
             </div>
             <div class="mb-3">
-                <label class="form-label">Categoría</label>
-                <input type="text" class="form-control">
+                <label class="form-label">Nombre *</label>
+                <input type="text" class="form-control" placeholder="Ingrese nombre" required>
+                <small class="text-muted">Máximo 100 caracteres</small>
             </div>
             <div class="mb-3">
-                <label class="form-label">Stock</label>
-                <input type="number" class="form-control">
+                <label class="form-label">Descripción</label>
+                <textarea class="form-control" rows="3" placeholder="Descripción del producto"></textarea>
+                <small class="text-muted">Máximo 500 caracteres</small>
             </div>
             <div class="mb-3">
-                <label class="form-label">Precio</label>
-                <input type="number" class="form-control">
+                <label class="form-label">Precio *</label>
+                <input type="number" class="form-control" placeholder="Precio" step="0.01" min="0" required>
+                <small class="text-muted">Mínimo 0 (producto gratis)</small>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Stock *</label>
+                <input type="number" class="form-control" placeholder="Stock" min="0" required>
+                <small class="text-muted">Solo números enteros, mínimo 0</small>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Stock Crítico</label>
+                <input type="number" class="form-control" placeholder="Stock crítico" min="0">
+                <small class="text-muted">Opcional, mínimo 0</small>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Categoría *</label>
+                <select class="form-control" required>
+                    <option value="">Seleccione categoría</option>
+                    <option value="Tortas Cuadradas">Tortas Cuadradas</option>
+                    <option value="Tortas Circulares">Tortas Circulares</option>
+                    <option value="Postres Individuales">Postres Individuales</option>
+                    <option value="Productos Sin Azúcar">Productos Sin Azúcar</option>
+                    <option value="Pastelería Tradicional">Pastelería Tradicional</option>
+                    <option value="Productos sin gluten">Productos sin gluten</option>
+                    <option value="Productos Vegana">Productos Vegana</option>
+                    <option value="Tortas Especiales">Tortas Especiales</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input type="file" class="form-control" accept="image/*">
+                <small class="text-muted">Opcional</small>
             </div>
             <button type="submit" class="btn btn-success">Registrar Producto</button>
         </form>
     </main>
-</body>
 
 
+<script>
+// Validaciones para crear producto - crearProducto.html
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevenir envío del formulario
+        
+        // Obtener valores de los campos
+        const codigo = document.querySelector('input[placeholder="Código"]')?.value || '';
+        const nombre = document.querySelector('input[placeholder="Ingrese nombre"]')?.value || '';
+        const descripcion = document.querySelector('textarea')?.value || '';
+        const precio = parseFloat(document.querySelector('input[placeholder="Precio"]')?.value || '0');
+        const stock = parseInt(document.querySelector('input[placeholder="Stock"]')?.value || '0');
+        const stockCritico = parseInt(document.querySelector('input[placeholder="Stock crítico"]')?.value || '0');
+        const categoria = document.querySelector('select')?.value || '';
+        
+        // Array para almacenar errores
+        let errores = [];
+        
+        // Validación código producto
+        if (!codigo.trim()) {
+            errores.push('Código de producto es requerido');
+        } else if (codigo.length < 3) {
+            errores.push('Código debe tener mínimo 3 caracteres');
+        }
+        
+        // Validación nombre
+        if (!nombre.trim()) {
+            errores.push('Nombre es requerido');
+        } else if (nombre.length > 100) {
+            errores.push('Nombre no puede exceder 100 caracteres');
+        }
+        
+        // Validación descripción (opcional)
+        if (descripcion.length > 500) {
+            errores.push('Descripción no puede exceder 500 caracteres');
+        }
+        
+        // Validación precio
+        if (isNaN(precio)) {
+            errores.push('Precio debe ser un número válido');
+        } else if (precio < 0) {
+            errores.push('Precio no puede ser menor a 0');
+        }
+        
+        // Validación stock
+        if (isNaN(stock)) {
+            errores.push('Stock debe ser un número entero válido');
+        } else if (stock < 0) {
+            errores.push('Stock no puede ser menor a 0');
+        } else if (!Number.isInteger(stock)) {
+            errores.push('Stock debe ser un número entero');
+        }
+        
+        // Validación stock crítico (opcional)
+        if (stockCritico !== 0) {
+            if (isNaN(stockCritico)) {
+                errores.push('Stock crítico debe ser un número entero válido');
+            } else if (stockCritico < 0) {
+                errores.push('Stock crítico no puede ser menor a 0');
+            } else if (!Number.isInteger(stockCritico)) {
+                errores.push('Stock crítico debe ser un número entero');
+            }
+        }
+        
+        // Validación categoría
+        if (!categoria.trim()) {
+            errores.push('Categoría es requerida');
+        }
+        
+        // Mostrar errores o éxito
+        if (errores.length > 0) {
+            alert('Errores encontrados:\n' + errores.join('\n'));
+        } else {
+            // Verificar stock crítico
+            if (stockCritico > 0 && stock <= stockCritico) {
+                alert('ALERTA: El stock actual es igual o inferior al stock crítico!');
+            }
+            alert('Producto registrado correctamente');
+            form.reset(); // Limpiar formulario
+        }
+    });
+});
+</script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
