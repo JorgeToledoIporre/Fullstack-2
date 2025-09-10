@@ -380,6 +380,27 @@
             mostrarCarrito();
         });
         </script>
+
+    <script>
+    // Función para obtener el carrito actual desde localStorage
+  function obtenerCarrito() {
+    const carrito = localStorage.getItem('carrito');
+    return carrito ? JSON.parse(carrito) : [];
+  }
+
+  // Función para actualizar el contador del carrito
+  function actualizarContadorCarrito() {
+    const carrito = obtenerCarrito();
+    const totalItems = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+  }
+
+  // Ejecutar al cargar la página
+  document.addEventListener('DOMContentLoaded', function() {
+    actualizarContadorCarrito();
+  });
+</script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
