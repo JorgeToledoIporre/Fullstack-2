@@ -91,6 +91,8 @@
                             <span>Envío:</span>
                             <span>Gratis</span>
                         </div>
+
+                        <div id="descuento-linea" class="d-flex justify-content-between mb-2"></div>
                         
                         <hr>
                         
@@ -178,23 +180,38 @@
         }
 
         function actualizarTotales() {
-            const carrito = obtenerCarrito();
-            
-            let subtotal = 0;
-            carrito.forEach(producto => {
-                subtotal += producto.precio * producto.cantidad;
-            });
+        const carrito = obtenerCarrito();
+        
+        let subtotal = 0;
+        carrito.forEach(producto => {
+            subtotal += producto.precio * producto.cantidad;
+        });
 
-            let total = subtotal;
+        let total = subtotal;
+        let montoDescuento = 0;
 
-            // Aplicar 10% de descuento si corresponde
-            if (descuentoAplicado) {
-                total = subtotal * 0.9;
-            }
+        const descuentoLinea = document.getElementById('descuento-linea');
 
-            document.getElementById('subtotal').textContent = `$ ${subtotal.toLocaleString()}`;
-            document.getElementById('total').textContent = `$ ${total.toLocaleString()}`;
+        if (descuentoAplicado) {
+            montoDescuento = subtotal * 0.1;
+            total = subtotal - montoDescuento;
+
+            // Insertar dinámicamente el contenido
+            descuentoLinea.innerHTML = `
+                <span>Descuento:</span>
+                <span>- $${montoDescuento.toLocaleString()}</span>
+            `;
+        } else {
+            // Limpiar el contenido para que no quede nada visible
+            descuentoLinea.innerHTML = '';
         }
+
+        document.getElementById('subtotal').textContent = `$ ${subtotal.toLocaleString()}`;
+        document.getElementById('total').textContent = `$ ${total.toLocaleString()}`;
+    }
+
+
+
 
         // EXPLICACIÓN DE LOCALSTORAGE:
         // LocalStorage es una API del navegador que permite almacenar datos de forma persistente
