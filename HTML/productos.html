@@ -53,249 +53,287 @@
     <h3>Listado de productos</h3>
   </div>
 
-  <!-- Listado de productos -->
+  <!-- Panel de Filtros probablemente reemplazado por un botón de filtro (espero se ve re feo) -->
+    <div class="container">
+        <div class="filtros">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="filtro-grupo">
+                        <label>Tipo de Producto:</label>
+                        <button class="btn btn-outline-primary btn-filtro active" onclick="filtrarPorTipo('todos')">Todos</button>
+                        <button class="btn btn-outline-primary btn-filtro" onclick="filtrarPorTipo('cuadrada')">Tortas Cuadradas</button>
+                        <button class="btn btn-outline-primary btn-filtro" onclick="filtrarPorTipo('circular')">Tortas Circulares</button>
+                        <button class="btn btn-outline-primary btn-filtro" onclick="filtrarPorTipo('individual')">Postres Individuales</button>
+                        <button class="btn btn-outline-primary btn-filtro" onclick="filtrarPorTipo('especial')">Tortas Especiales</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="filtro-grupo">
+                        <label>Tamaño:</label>
+                        <button class="btn btn-outline-success btn-filtro active" onclick="filtrarPorTamano('todos')">Todos</button>
+                        <button class="btn btn-outline-success btn-filtro" onclick="filtrarPorTamano('pequeno')">Pequeño</button>
+                        <button class="btn btn-outline-success btn-filtro" onclick="filtrarPorTamano('mediano')">Mediano</button>
+                        <button class="btn btn-outline-success btn-filtro" onclick="filtrarPorTamano('grande')">Grande</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="filtro-grupo">
+                        <label>Opciones Especiales:</label>
+                        <button class="btn btn-outline-warning btn-filtro active" onclick="filtrarPorOpcion('todos')">Todos</button>
+                        <button class="btn btn-outline-warning btn-filtro" onclick="filtrarPorOpcion('sin-azucar')">Sin Azúcar</button>
+                        <button class="btn btn-outline-warning btn-filtro" onclick="filtrarPorOpcion('sin-gluten')">Sin Gluten</button>
+                        <button class="btn btn-outline-warning btn-filtro" onclick="filtrarPorOpcion('vegano')">Vegano</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <button class="btn btn-secondary" onclick="limpiarFiltros()">Limpiar Filtros</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Listado de productos -->
     <section class="productos">
-      <article>
-  <img src="images/pasteles/TC001.png" alt="Torta Cuadrada de Chocolate">
-  <h3>Torta Cuadrada de Chocolate</h3>
-  <p>Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.</p>
-  <p class="fw-bold">$45.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 1, nombre: "Torta Cuadrada de Chocolate", precio: 45000, descripcion: "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.", imagen: "TC001.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(1,'Torta Cuadrada de Chocolate',45000,'Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.','TC001.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="cuadrada" data-tamano="mediano" data-opcion="normal">
+            <img src="images/pasteles/TC001.png" alt="Torta Cuadrada de Chocolate">
+            <h3>Torta Cuadrada de Chocolate</h3>
+            <p>Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.</p>
+            <p class="fw-bold">$45.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 1, nombre: "Torta Cuadrada de Chocolate", precio: 45000, descripcion: "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.", imagen: "TC001.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(1,'Torta Cuadrada de Chocolate',45000,'Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.','TC001.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/TC002.png" alt="Torta Cuadrada de Frutas">
-  <h3>Torta Cuadrada de Frutas</h3>
-  <p>Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones.</p>
-  <p class="fw-bold">$50.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 2, nombre: "Torta Cuadrada de Frutas", precio: 50000, descripcion: "Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones.", imagen: "TC002.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(2,'Torta Cuadrada de Frutas',50000,'Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones.','TC002.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="cuadrada" data-tamano="mediano" data-opcion="normal">
+            <img src="images/pasteles/TC002.png" alt="Torta Cuadrada de Frutas">
+            <h3>Torta Cuadrada de Frutas</h3>
+            <p>Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones.</p>
+            <p class="fw-bold">$50.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 2, nombre: "Torta Cuadrada de Frutas", precio: 50000, descripcion: "Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones.", imagen: "TC002.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(2,'Torta Cuadrada de Frutas',50000,'Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones.','TC002.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/TT001.png" alt="Torta Circular de Vainilla">
-  <h3>Torta Circular de Vainilla</h3>
-  <p>Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión.</p>
-  <p class="fw-bold">$40.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 3, nombre: "Torta Circular de Vainilla", precio: 40000, descripcion: "Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión.", imagen: "TT001.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(3,'Torta Circular de Vainilla',40000,'Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión.','TT001.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="circular" data-tamano="mediano" data-opcion="normal">
+            <img src="images/pasteles/TT001.png" alt="Torta Circular de Vainilla">
+            <h3>Torta Circular de Vainilla</h3>
+            <p>Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión.</p>
+            <p class="fw-bold">$40.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 3, nombre: "Torta Circular de Vainilla", precio: 40000, descripcion: "Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión.", imagen: "TT001.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(3,'Torta Circular de Vainilla',40000,'Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión.','TT001.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/TT002.png" alt="Torta Circular de Manjar">
-  <h3>Torta Circular de Manjar</h3>
-  <p>Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos.</p>
-  <p class="fw-bold">$42.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 4, nombre: "Torta Circular de Manjar", precio: 42000, descripcion: "Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos.", imagen: "TT002.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(4,'Torta Circular de Manjar',42000,'Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos.','TT002.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="circular" data-tamano="mediano" data-opcion="normal">
+            <img src="images/pasteles/TT002.png" alt="Torta Circular de Manjar">
+            <h3>Torta Circular de Manjar</h3>
+            <p>Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos.</p>
+            <p class="fw-bold">$42.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 4, nombre: "Torta Circular de Manjar", precio: 42000, descripcion: "Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos.", imagen: "TT002.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(4,'Torta Circular de Manjar',42000,'Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos.','TT002.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PI001.png" alt="Mousse de Chocolate">
-  <h3>Mousse de Chocolate</h3>
-  <p>Postre individual cremoso y suave, hecho con chocolate de alta calidad, ideal para los amantes del chocolate.</p>
-  <p class="fw-bold">$5.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 5, nombre: "Mousse de Chocolate", precio: 5000, descripcion: "Postre individual cremoso y suave, hecho con chocolate de alta calidad, ideal para los amantes del chocolate.", imagen: "PI001.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(5,'Mousse de Chocolate',5000,'Postre individual cremoso y suave, hecho con chocolate de alta calidad, ideal para los amantes del chocolate.','PI001.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="individual" data-tamano="pequeno" data-opcion="normal">
+            <img src="images/pasteles/PI001.png" alt="Mousse de Chocolate">
+            <h3>Mousse de Chocolate</h3>
+            <p>Postre individual cremoso y suave, hecho con chocolate de alta calidad, ideal para los amantes del chocolate.</p>
+            <p class="fw-bold">$5.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 5, nombre: "Mousse de Chocolate", precio: 5000, descripcion: "Postre individual cremoso y suave, hecho con chocolate de alta calidad, ideal para los amantes del chocolate.", imagen: "PI001.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(5,'Mousse de Chocolate',5000,'Postre individual cremoso y suave, hecho con chocolate de alta calidad, ideal para los amantes del chocolate.','PI001.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PI002.png" alt="Tiramisú Clásico">
-  <h3>Tiramisú Clásico</h3>
-  <p>Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida.</p>
-  <p class="fw-bold">$5.500</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 6, nombre: "Tiramisú Clásico", precio: 5500, descripcion: "Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida.", imagen: "PI002.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(6,'Tiramisú Clásico',5500,'Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida.','PI002.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="individual" data-tamano="pequeno" data-opcion="normal">
+            <img src="images/pasteles/PI002.png" alt="Tiramisú Clásico">
+            <h3>Tiramisú Clásico</h3>
+            <p>Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida.</p>
+            <p class="fw-bold">$5.500</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 6, nombre: "Tiramisú Clásico", precio: 5500, descripcion: "Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida.", imagen: "PI002.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(6,'Tiramisú Clásico',5500,'Un postre italiano individual con capas de café, mascarpone y cacao, perfecto para finalizar cualquier comida.','PI002.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
+        <article data-tipo="cuadrada" data-tamano="mediano" data-opcion="sin-azucar">
+            <img src="images/pasteles/PSA001.png" alt="Torta Sin Azúcar de Naranja">
+            <h3>Torta Sin Azúcar de Naranja</h3>
+            <p>Torta ligera y deliciosa, endulzada naturalmente, ideal para quienes buscan opciones más saludables.</p>
+            <p class="fw-bold">$48.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 7, nombre: "Torta Sin Azúcar de Naranja", precio: 48000, descripcion: "Torta ligera y deliciosa, endulzada naturalmente, ideal para quienes buscan opciones más saludables.", imagen: "PSA001.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(7,'Torta Sin Azúcar de Naranja',48000,'Torta ligera y deliciosa, endulzada naturalmente, ideal para quienes buscan opciones más saludables.','PSA001.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-      <article>
-  <img src="images/pasteles/PSA001.png" alt="Torta Sin Azúcar de Naranja">
-  <h3>Torta Sin Azúcar de Naranja</h3>
-  <p>Torta ligera y deliciosa, endulzada naturalmente, ideal para quienes buscan opciones más saludables.</p>
-  <p class="fw-bold">$48.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 7, nombre: "Torta Sin Azúcar de Naranja", precio: 48000, descripcion: "Torta ligera y deliciosa, endulzada naturalmente, ideal para quienes buscan opciones más saludables.", imagen: "PSA001.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(7,'Torta Sin Azúcar de Naranja',48000,'Torta ligera y deliciosa, endulzada naturalmente, ideal para quienes buscan opciones más saludables.','PSA001.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="circular" data-tamano="mediano" data-opcion="sin-azucar">
+            <img src="images/pasteles/PSA002.png" alt="Cheesecake Sin Azúcar">
+            <h3>Cheesecake Sin Azúcar</h3>
+            <p>Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa.</p>
+            <p class="fw-bold">$47.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 8, nombre: "Cheesecake Sin Azúcar", precio: 47000, descripcion: "Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa.", imagen: "PSA002.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(8,'Cheesecake Sin Azúcar',47000,'Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa.','PSA002.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PSA002.png" alt="Cheesecake Sin Azúcar">
-  <h3>Cheesecake Sin Azúcar</h3>
-  <p>Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa.</p>
-  <p class="fw-bold">$47.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 8, nombre: "Cheesecake Sin Azúcar", precio: 47000, descripcion: "Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa.", imagen: "PSA002.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(8,'Cheesecake Sin Azúcar',47000,'Suave y cremoso, este cheesecake es una opción perfecta para disfrutar sin culpa.','PSA002.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="individual" data-tamano="pequeno" data-opcion="normal">
+            <img src="images/pasteles/PT001.png" alt="Empanada de Manzana">
+            <h3>Empanada de Manzana</h3>
+            <p>Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda.</p>
+            <p class="fw-bold">$3.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 9, nombre: "Empanada de Manzana", precio: 3000, descripcion: "Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda.", imagen: "PT001.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(9,'Empanada de Manzana',3000,'Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda.','PT001.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PT001.png" alt="Empanada de Manzana">
-  <h3>Empanada de Manzana</h3>
-  <p>Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda.</p>
-  <p class="fw-bold">$3.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 9, nombre: "Empanada de Manzana", precio: 3000, descripcion: "Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda.", imagen: "PT001.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(9,'Empanada de Manzana',3000,'Pastelería tradicional rellena de manzanas especiadas, perfecta para un dulce desayuno o merienda.','PT001.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="individual" data-tamano="pequeno" data-opcion="normal">
+            <img src="images/pasteles/PT002.png" alt="Tarta de Santiago">
+            <h3>Tarta de Santiago</h3>
+            <p>Tradicional tarta española hecha con almendras, azúcar y huevos, una delicia para los amantes de los postres clásicos.</p>
+            <p class="fw-bold">$6.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 10, nombre: "Tarta de Santiago", precio: 6000, descripcion: "Tradicional tarta española hecha con almendras, azúcar y huevos, una delicia para los amantes de los postres clásicos.", imagen: "PT002.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(10,'Tarta de Santiago',6000,'Tradicional tarta española hecha con almendras, azúcar y huevos, una delicia para los amantes de los postres clásicos.','PT002.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PT002.png" alt="Tarta de Santiago">
-  <h3>Tarta de Santiago</h3>
-  <p>Tradicional tarta española hecha con almendras, azúcar y huevos, una delicia para los amantes de los postres clásicos.</p>
-  <p class="fw-bold">$6.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 10, nombre: "Tarta de Santiago", precio: 6000, descripcion: "Tradicional tarta española hecha con almendras, azúcar y huevos, una delicia para los amantes de los postres clásicos.", imagen: "PT002.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(10,'Tarta de Santiago',6000,'Tradicional tarta española hecha con almendras, azúcar y huevos, una delicia para los amantes de los postres clásicos.','PT002.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="individual" data-tamano="pequeno" data-opcion="sin-gluten">
+            <img src="images/pasteles/PG001.png" alt="Brownie Sin Gluten">
+            <h3>Brownie Sin Gluten</h3>
+            <p>Rico y denso, perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor.</p>
+            <p class="fw-bold">$4.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 11, nombre: "Brownie Sin Gluten", precio: 4000, descripcion: "Rico y denso, perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor.", imagen: "PG001.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(11,'Brownie Sin Gluten',4000,'Rico y denso, perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor.','PG001.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PG001.png" alt="Brownie Sin Gluten">
-  <h3>Brownie Sin Gluten</h3>
-  <p>Rico y denso, perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor.</p>
-  <p class="fw-bold">$4.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 11, nombre: "Brownie Sin Gluten", precio: 4000, descripcion: "Rico y denso, perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor.", imagen: "PG001.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(11,'Brownie Sin Gluten',4000,'Rico y denso, perfecto para quienes necesitan evitar el gluten sin sacrificar el sabor.','PG001.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="individual" data-tamano="pequeno" data-opcion="sin-gluten">
+            <img src="images/pasteles/PG002.png" alt="Pan Sin Gluten">
+            <h3>Pan Sin Gluten</h3>
+            <p>Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida.</p>
+            <p class="fw-bold">$3.500</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 12, nombre: "Pan Sin Gluten", precio: 3500, descripcion: "Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida.", imagen: "PG002.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(12,'Pan Sin Gluten',3500,'Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida.','PG002.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PG002.png" alt="Pan Sin Gluten">
-  <h3>Pan Sin Gluten</h3>
-  <p>Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida.</p>
-  <p class="fw-bold">$3.500</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 12, nombre: "Pan Sin Gluten", precio: 3500, descripcion: "Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida.", imagen: "PG002.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(12,'Pan Sin Gluten',3500,'Suave y esponjoso, ideal para sándwiches o para acompañar cualquier comida.','PG002.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="circular" data-tamano="grande" data-opcion="vegano">
+            <img src="images/pasteles/PV001.png" alt="Torta Vegana de Chocolate">
+            <h3>Torta Vegana de Chocolate</h3>
+            <p>Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos.</p>
+            <p class="fw-bold">$50.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 13, nombre: "Torta Vegana de Chocolate", precio: 50000, descripcion: "Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos.", imagen: "PV001.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(13,'Torta Vegana de Chocolate',50000,'Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos.','PV001.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PV001.png" alt="Torta Vegana de Chocolate">
-  <h3>Torta Vegana de Chocolate</h3>
-  <p>Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos.</p>
-  <p class="fw-bold">$50.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 13, nombre: "Torta Vegana de Chocolate", precio: 50000, descripcion: "Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos.", imagen: "PV001.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(13,'Torta Vegana de Chocolate',50000,'Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos.','PV001.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="individual" data-tamano="pequeno" data-opcion="vegano">
+            <img src="images/pasteles/PV002.png" alt="Galletas Veganas de Avena">
+            <h3>Galletas Veganas de Avena</h3>
+            <p>Crujientes y sabrosas, una excelente opción para un snack saludable y vegano.</p>
+            <p class="fw-bold">$4.500</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 14, nombre: "Galletas Veganas de Avena", precio: 4500, descripcion: "Crujientes y sabrosas, una excelente opción para un snack saludable y vegano.", imagen: "PV002.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(14,'Galletas Veganas de Avena',4500,'Crujientes y sabrosas, una excelente opción para un snack saludable y vegano.','PV002.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/PV002.png" alt="Galletas Veganas de Avena" >
-  <h3>Galletas Veganas de Avena</h3>
-  <p>Crujientes y sabrosas, una excelente opción para un snack saludable y vegano.</p>
-  <p class="fw-bold">$4.500</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 14, nombre: "Galletas Veganas de Avena", precio: 4500, descripcion: "Crujientes y sabrosas, una excelente opción para un snack saludable y vegano.", imagen: "PV002.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(14,'Galletas Veganas de Avena',4500,'Crujientes y sabrosas, una excelente opción para un snack saludable y vegano.','PV002.png')">
-    Agregar al Carrito
-  </button>
-</article>
+        <article data-tipo="especial" data-tamano="grande" data-opcion="normal">
+            <img src="images/pasteles/TE001.png" alt="Torta Especial de Cumpleaños">
+            <h3>Torta Especial de Cumpleaños</h3>
+            <p>Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.</p>
+            <p class="fw-bold">$55.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 15, nombre: "Torta Especial de Cumpleaños", precio: 55000, descripcion: "Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.", imagen: "TE001.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(15,'Torta Especial de Cumpleaños',55000,'Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.','TE001.png')">
+                Agregar al Carrito
+            </button>
+        </article>
 
-<article>
-  <img src="images/pasteles/TE001.png" alt="Torta Especial de Cumpleaños">
-  <h3>Torta Especial de Cumpleaños</h3>
-  <p>Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.</p>
-  <p class="fw-bold">$55.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 15, nombre: "Torta Especial de Cumpleaños", precio: 55000, descripcion: "Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.", imagen: "TE001.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(15,'Torta Especial de Cumpleaños',55000,'Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.','TE001.png')">
-    Agregar al Carrito
-  </button>
-</article>
-
-<article>
-  <img src="images/pasteles/TE002.png" alt="Torta Especial de Boda" >
-  <h3>Torta Especial de Boda</h3>
-  <p>Elegante y deliciosa, diseñada para ser el centro de atención en cualquier boda.</p>
-  <p class="fw-bold">$60.000</p>
-  <button class="btn mi-button mb-2"
-          onclick='verDetalle({id: 16, nombre: "Torta Especial de Boda", precio: 60000, descripcion: "Elegante y deliciosa, diseñada para ser el centro de atención en cualquier boda.", imagen: "TE002.png"})'>
-    Ver Detalle
-  </button>
-  <button class="btn mi-button"
-          onclick="agregarAlCarrito(16,'Torta Especial de Boda',60000,'Elegante y deliciosa, diseñada para ser el centro de atención en cualquier boda.','TE002.png')">
-    Agregar al Carrito
-  </button>
-</article>
- 
+        <article data-tipo="especial" data-tamano="grande" data-opcion="normal">
+            <img src="images/pasteles/TE002.png" alt="Torta Especial de Boda">
+            <h3>Torta Especial de Boda</h3>
+            <p>Elegante y deliciosa, diseñada para ser el centro de atención en cualquier boda.</p>
+            <p class="fw-bold">$60.000</p>
+            <button class="btn mi-button mb-2"
+                    onclick='verDetalle({id: 16, nombre: "Torta Especial de Boda", precio: 60000, descripcion: "Elegante y deliciosa, diseñada para ser el centro de atención en cualquier boda.", imagen: "TE002.png"})'>
+                Ver Detalle
+            </button>
+            <button class="btn mi-button"
+                    onclick="agregarAlCarrito(16,'Torta Especial de Boda',60000,'Elegante y deliciosa, diseñada para ser el centro de atención en cualquier boda.','TE002.png')">
+                Agregar al Carrito
+            </button>
+        </article>
     </section>
 
     
@@ -355,6 +393,111 @@
 
    <!-- JavaScript para el carrito -->
   <script>
+    // Variables para los filtros activos
+    let filtroActivo = {
+        tipo: 'todos',
+        tamano: 'todos',
+        opcion: 'todos'
+    };    
+    // FUNCIONES DE FILTRADO
+
+    // Función para filtrar por tipo de producto
+    function filtrarPorTipo(tipo) {
+        filtroActivo.tipo = tipo;
+        actualizarBotonesActivos('tipo', tipo);
+        aplicarFiltros();
+    }
+
+    // Función para filtrar por tamaño
+    function filtrarPorTamano(tamano) {
+        filtroActivo.tamano = tamano;
+        actualizarBotonesActivos('tamano', tamano);
+        aplicarFiltros();
+    }
+
+    // Función para filtrar por opción especial
+    function filtrarPorOpcion(opcion) {
+        filtroActivo.opcion = opcion;
+        actualizarBotonesActivos('opcion', opcion);
+        aplicarFiltros();
+    }
+
+    // Función para actualizar los botones activos
+    function actualizarBotonesActivos(categoria, valor) {
+        // Remover clase active de todos los botones de la categoría
+        const botones = document.querySelectorAll('.btn-filtro');
+        botones.forEach(boton => {
+            if (boton.onclick.toString().includes(categoria === 'tipo' ? 'filtrarPorTipo' : 
+                categoria === 'tamano' ? 'filtrarPorTamano' : 'filtrarPorOpcion')) {
+                boton.classList.remove('active');
+            }
+        });
+
+        // Agregar clase active al botón seleccionado
+        event.target.classList.add('active');
+    }
+
+    // Función principal para aplicar todos los filtros
+    function aplicarFiltros() {
+        const productos = document.querySelectorAll('.productos article');
+        
+        productos.forEach(producto => {
+            const tipoProducto = producto.getAttribute('data-tipo');
+            const tamanoProducto = producto.getAttribute('data-tamano');
+            const opcionProducto = producto.getAttribute('data-opcion');
+            
+            let mostrar = true;
+            
+            // Verificar filtro de tipo
+            if (filtroActivo.tipo !== 'todos' && tipoProducto !== filtroActivo.tipo) {
+                mostrar = false;
+            }
+            
+            // Verificar filtro de tamaño
+            if (filtroActivo.tamano !== 'todos' && tamanoProducto !== filtroActivo.tamano) {
+                mostrar = false;
+            }
+            
+            // Verificar filtro de opción
+            if (filtroActivo.opcion !== 'todos' && opcionProducto !== filtroActivo.opcion) {
+                mostrar = false;
+            }
+            
+            // Mostrar u ocultar producto
+            if (mostrar) {
+                producto.classList.remove('oculto');
+            } else {
+                producto.classList.add('oculto');
+            }
+        });
+    }
+
+    // Función para limpiar todos los filtros
+    function limpiarFiltros() {
+        filtroActivo = {
+            tipo: 'todos',
+            tamano: 'todos',
+            opcion: 'todos'
+        };
+        
+        // Remover clase active de todos los botones
+        document.querySelectorAll('.btn-filtro').forEach(boton => {
+            boton.classList.remove('active');
+        });
+        
+        // Activar botones "Todos"
+        document.querySelectorAll('.btn-filtro').forEach(boton => {
+            if (boton.onclick.toString().includes("'todos'")) {
+                boton.classList.add('active');
+            }
+        });
+        
+        // Mostrar todos los productos
+        document.querySelectorAll('.productos article').forEach(producto => {
+            producto.classList.remove('oculto');
+        });
+    }
+
     // Función para obtener el carrito actual desde localStorage
     function obtenerCarrito() {
       const carrito = localStorage.getItem('carrito');
