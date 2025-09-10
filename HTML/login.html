@@ -63,7 +63,7 @@
               </span>
             </label>
             <input type="email" class="form-control" id="emailId" required maxlength="100" placeholder="ejemplo@duoc.cl" pattern="^[a-zA-Z0-9._%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$">
-            <div class="invalid-tooltip">El correo no es válido.</div>
+            <div class="invalid-feedback">El correo no es válido.</div>
         </div>
 
         <div class="col-6 position-relative">
@@ -75,7 +75,7 @@
               </span>
             </label>
             <input type="password" class="form-control" id="contraseñaId" required minlength="4" maxlength="10" placeholder="**********">
-            <div class="invalid-tooltip">Contraseña incorrecta!</div>
+            <div class="invalid-feedback">La contraseña no es válida</div>
         </div>
 
         <div class="col-12 text-center mt-3">
@@ -94,27 +94,30 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-// Validación Bootstrap + redirección ft.chatGPT para hacerlo mucho más simplificado y dinámico.
 document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault(); // evita envío normal
 
     const form = this;
+    const email = document.getElementById("emailId");
+    const password = document.getElementById("contraseñaId");
 
-    // Validación de Bootstrap
+    // Resetear validación
+    email.classList.remove('is-invalid');
+    password.classList.remove('is-invalid');
+
+    // Verificación de campos requeridos
     if (!form.checkValidity()) {
         form.classList.add('was-validated');
-        return; // no pasa validación
+        return;
     }
 
-    //trim elimina espacios antes y despues
-    const email = document.getElementById("emailId").value.trim();
-    const password = document.getElementById("contraseñaId").value.trim();
-
-    // Redirección según combinación
-    if (email === "admin@gmail.com" && password === "admin") {
+    // Validación de login
+    if (email.value.trim() === "admin@gmail.com" && password.value.trim() === "admin") {
         window.location.href = "homeAdmin.html";
     } else {
-        window.location.href = "usuario.html";
+        // Mostrar invalid-feedback de ambos campos
+        email.classList.add('is-invalid');
+        password.classList.add('is-invalid');
     }
 });
 </script>
