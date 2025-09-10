@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+  <header>
+    <!-- Barra superior con menu de hamburguesa responsivo-->
+    <!-- el logo-->
+    <nav class="navbar navbar-expand-lg" ><!--el navbar-expand-lg funciona para que el menu se vea expandido en pantallas grandes, usando lg (materia de clases estudien)-->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+                                <img src="images/logo.jpg" alt="logo" width="30" height="24">
+                                PMS©
+                            </a>
+
+        <!--el botón de hamburguesa en si-->
+        <!--navbar-toggler es el botón hamburguesa que aparece al achicar la pantalla-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> <!--se usa span en vez de div porque solamente se usará en pantallas pequeñas-->
+      </button>
+
+      <!-- mlos links que usamos-->
+      <div class="collapse navbar-collapse" id="mainNavbar"> <!--collapse nabvar se usa para ocultar o mostrar usando el click-->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <!--y el carrito igual que con pantalla grande-->
+      <a href="carrito.html" class="navbar-text text-white fw-bold d-flex align-items-center text-decoration-none">
+        <img src="images/utiles/carrito.png" alt="Carrito" style="width: 20px; height: 20px; margin-right: 8px;">
+        Carrito (<span id="cart-count">0</span>)
+      </a>
+    </div>
+    </div>
+  </nav>
+</header>
+
+
+
+
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="productos.html">Productos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">el pastel que se pone idk queria poner bredcum porque salia en el mockup ayuda</li>
+            </ol>
+        </nav>
+
+        <!-- Detalle del producto -->
+        <div class="product-detail-container">
+            <div class="row">
+                <!-- Columna izquierda - Imágenes -->
+                <div class="col-md-6">
+                    <!-- Imagen principal con placeholder -->
+                    <div style="background-color: #f8f9fa; border: 2px solid var(--color-border); border-radius: 8px; height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 48px; color: var(--color-border);">×</span>
+                    </div>
+
+                    <!-- Thumbnails -->
+                    <div class="product-thumbnails">
+                        <div class="thumbnail"></div>
+                        <div class="thumbnail"></div>
+                        <div class="thumbnail"></div>
+                    </div>
+                </div>
+
+                <!-- Columna derecha - Información del producto -->
+                <div class="col-md-6">
+                    <div class="product-info">
+                        <h1>Nombre Producto</h1>
+                        <div class="product-price">$100</div>
+                        
+                        <div class="product-description">
+                            Las máquinas con una fuerza deliciosa y versátil, demandan su labor en nuestra por su sabor refrescante y sus múltiples beneficios nutritivos. Son ingredientes favoritos en la repostería artesanal. Las máquinas con una opción perfecta para cualquier ocasión, ya sea como un ligero desayuno.
+                        </div>
+
+                        <!-- Control de cantidad -->
+                        <div class="quantity-control">
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" id="cantidad" class="quantity-input" value="1" min="1">
+                        </div>
+
+                        <!-- Botón agregar al carrito -->
+                        <button class="btn-add-to-cart">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Productos relacionados -->
+            <div class="related-products">
+                <h3>Related Products</h3>
+                <div class="related-products-grid">
+                    <div class="related-product">
+                        <div class="related-product-image"></div>
+                        <h4>Producto relacionado</h4>
+                    </div>
+                    <div class="related-product">
+                        <div class="related-product-image"></div>
+                        <h4>Producto relacionado</h4>
+                    </div>
+                    <div class="related-product">
+                        <div class="related-product-image"></div>
+                        <h4>Producto relacionado</h4>
+                    </div>
+                    <div class="related-product">
+                        <div class="related-product-image"></div>
+                        <h4>Producto relacionado</h4>
+                    </div>
+                    <div class="related-product">
+                        <div class="related-product-image"></div>
+                        <h4>Producto relacionado</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  
+ <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-info">
+      <p>© 2025, Pastelería Mil Sabores. Todos los derechos reservados.  
+    Pastelería Mil Sabores, el logotipo de Pastelería Mil Sabores y los nombres de nuestros productos son marcas comerciales o marcas registradas de Pastelería Mil Sabores en Chile.  
+    Otras marcas o nombres de productos son marcas comerciales de sus respectivos propietarios.</p>
+    </div>
+
+    <div class="footer-left">
+      <div class="footer-categories">  
+        <a href=""><span>Categoria X</span></a> |
+        <a href="productos.html"><span>Productos</span></a> |
+        <a href="contacto.html"><span>Contacto</span></a>
+      </div>
+    
+      <div class="payment-icons">
+        <img src="images/utiles/visa.png" alt="Visa">
+        <img src="images/utiles/mastercard.png" alt="MasterCard">
+        <img src="images/utiles/redcompra.png" alt="RedCompra">
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p>Mantengase al tanto de más noticias</p>
+      <form action="#" method="post">
+        <input type="email" placeholder="Ingresar correo">
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
